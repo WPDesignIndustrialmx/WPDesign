@@ -7,10 +7,8 @@
 <title>WP Design | Automatización Industrial en Celaya</title>
 
 <meta name="description" content="Automatización industrial en Celaya. Diseño mecánico, mantenimiento e integración de maquinaria.">
-<meta name="keywords" content="automatización industrial, Celaya, diseño mecánico, mantenimiento industrial, conveyors">
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 
@@ -30,7 +28,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 15px 60px; /* MÁS ESPACIO */
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
   transition: 0.3s;
@@ -39,13 +37,30 @@ header {
 
 header.scrolled {
   background: rgba(0,0,0,0.9);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+/* NAV MEJORADO */
+nav {
+  display: flex;
+  gap: 40px; /* separación */
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
+  white-space: nowrap; /* evita cortes */
+  font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
 }
 
 /* HERO */
@@ -81,10 +96,6 @@ nav a {
   font-size: 50px;
 }
 
-.hero-content p {
-  color: #d1d5db;
-}
-
 /* BOTÓN */
 .btn {
   background: linear-gradient(135deg,#3b82f6,#2563eb);
@@ -113,11 +124,6 @@ nav a {
   background: #111827;
   padding: 30px;
   border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
 }
 
 /* PROJECTS */
@@ -130,12 +136,6 @@ nav a {
 .project img {
   width: 100%;
   border-radius: 10px;
-}
-
-.project p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #cbd5f5;
 }
 
 /* CONTACT */
@@ -183,20 +183,8 @@ footer {
 
   <div class="hero-content">
     <h2>Automatización industrial en Celaya</h2>
-    <p>Diseño mecánico, mantenimiento e integración de maquinaria industrial.</p>
-
-    <a href="https://wa.me/524331111971?text=Hola,%20quiero%20una%20cotización" class="btn">
-      Cotizar ahora
-    </a>
+    <a href="https://wa.me/524331111971" class="btn">Cotizar ahora</a>
   </div>
-</section>
-
-<section class="section">
-  <h2>Sobre Nosotros</h2>
-  <p>
-    WP Design es una empresa especializada en automatización, diseño mecánico y mantenimiento industrial.
-  </p>
-  <p><strong>+5 años de experiencia en industria automotriz y manufactura.</strong></p>
 </section>
 
 <section id="servicios" class="section">
@@ -204,38 +192,23 @@ footer {
 <div class="services">
 <div class="card">Diseño mecánico</div>
 <div class="card">Automatización industrial</div>
-<div class="card">Instalaciones eléctricas y neumáticas</div>
-<div class="card">Mantenimiento industrial</div>
+<div class="card">Instalaciones</div>
+<div class="card">Mantenimiento</div>
 </div>
 </section>
 
 <section id="proyectos" class="section">
 <h2>Proyectos</h2>
-
 <div class="projects">
-
-<div class="project">
 <img src="Proyecto1.jpg">
-<p>Integración de conveyor en línea de producción</p>
-</div>
-
-<div class="project">
 <img src="Proyecto2.jpg">
-<p>Diseño y fabricación de herramental</p>
-</div>
-
-<div class="project">
 <img src="Proyecto3.jpg">
-<p>Mantenimiento en planta industrial</p>
-</div>
-
 </div>
 </section>
 
 <section id="contacto" class="section contact">
 <h2>Contacto</h2>
 <p>Celaya, Guanajuato</p>
-<p>WhatsApp: 433 111 1971</p>
 </section>
 
 <footer>
