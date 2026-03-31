@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WP Design | Automatización Industrial en Celaya</title>
-
-<meta name="description" content="Automatización industrial en Celaya. Diseño mecánico, mantenimiento e integración de maquinaria.">
+<title>WP Design</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -28,7 +26,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px; /* MÁS ESPACIO */
+  padding: 15px 60px;
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
   transition: 0.3s;
@@ -39,28 +37,16 @@ header.scrolled {
   background: rgba(0,0,0,0.9);
 }
 
-/* NAV MEJORADO */
+/* NAV */
 nav {
   display: flex;
-  gap: 40px; /* separación */
+  gap: 40px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  white-space: nowrap; /* evita cortes */
-  font-size: 16px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  nav {
-    gap: 15px;
-  }
-
-  nav a {
-    font-size: 14px;
-  }
+  white-space: nowrap;
 }
 
 /* HERO */
@@ -98,13 +84,11 @@ nav a {
 
 /* BOTÓN */
 .btn {
-  background: linear-gradient(135deg,#3b82f6,#2563eb);
+  background: #3b82f6;
   padding: 15px 30px;
-  border-radius: 8px;
-  text-decoration: none;
+  border-radius: 5px;
   color: white;
-  display: inline-block;
-  margin-top: 20px;
+  text-decoration: none;
 }
 
 /* SECTIONS */
@@ -123,7 +107,7 @@ nav a {
 .card {
   background: #111827;
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 /* PROJECTS */
@@ -166,7 +150,11 @@ footer {
 <body>
 
 <header>
-  <h1>WP Design</h1>
+  <div style="display:flex; align-items:center;">
+    <img src="logo.png" style="height:50px; margin-right:10px;">
+    <h1 style="margin:0;">WP Design</h1>
+  </div>
+
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
@@ -175,44 +163,78 @@ footer {
   </nav>
 </header>
 
+<!-- HERO -->
 <section id="inicio" class="hero">
-  <video autoplay muted loop class="video-bg">
-    <source src="video.mp4">
+
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="video.mp4" type="video/mp4">
   </video>
+
   <div class="overlay"></div>
 
   <div class="hero-content">
-    <h2>Automatización industrial en Celaya</h2>
-    <a href="https://wa.me/524331111971" class="btn">Cotizar ahora</a>
+    <h2>Automatización industrial de alto rendimiento</h2>
+    <p>Diseño mecánico, integración y mantenimiento especializado.</p>
+
+    <a href="https://wa.me/524331111971" class="btn">
+      Solicitar servicio
+    </a>
+  </div>
+
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="section">
+  <h2>Sobre Nosotros</h2>
+  <p>
+    WP Design es una empresa especializada en automatización, diseño mecánico y mantenimiento industrial.
+  </p>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section">
+  <h2>Servicios</h2>
+
+  <div class="services">
+    <div class="card">Diseño mecánico y maquinados</div>
+    <div class="card">Instalaciones eléctricas y neumáticas</div>
+    <div class="card">Herramentales para soldadura</div>
+    <div class="card">Mantenimiento industrial</div>
   </div>
 </section>
 
-<section id="servicios" class="section">
-<h2>Servicios</h2>
-<div class="services">
-<div class="card">Diseño mecánico</div>
-<div class="card">Automatización industrial</div>
-<div class="card">Instalaciones</div>
-<div class="card">Mantenimiento</div>
-</div>
-</section>
-
+<!-- PROYECTOS -->
 <section id="proyectos" class="section">
-<h2>Proyectos</h2>
-<div class="projects">
-<img src="Proyecto1.jpg">
-<img src="Proyecto2.jpg">
-<img src="Proyecto3.jpg">
-</div>
+  <h2>Proyectos</h2>
+
+  <div class="projects">
+
+    <div class="project">
+      <img src="Proyecto1.jpg">
+      <p>Integración de conveyor</p>
+    </div>
+
+    <div class="project">
+      <img src="Proyecto2.jpg">
+      <p>Diseño de herramental</p>
+    </div>
+
+    <div class="project">
+      <img src="Proyecto3.jpg">
+      <p>Mantenimiento industrial</p>
+    </div>
+
+  </div>
 </section>
 
+<!-- CONTACTO -->
 <section id="contacto" class="section contact">
-<h2>Contacto</h2>
-<p>Celaya, Guanajuato</p>
+  <h2>Contacto</h2>
+  <p>Celaya, Guanajuato</p>
 </section>
 
 <footer>
-<p>© 2026 WP Design</p>
+  <p>© 2026 WP Design</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/524331111971">💬</a>
