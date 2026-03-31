@@ -6,8 +6,13 @@
 <title>WP Design</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -35,37 +40,53 @@ nav a {
   color: white;
   margin: 0 15px;
   text-decoration: none;
-  font-weight: 500;
 }
 
-/* HERO */
+/* HERO PRO */
 .hero {
+  position: relative;
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1581091870622-3c1c6c5d9a7b') center/cover no-repeat;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 60px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 }
 
 .hero-content {
-  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
 }
 
-.hero h2 {
-  font-size: 48px;
+.hero-content h2 {
+  font-size: 50px;
 }
 
-.hero p {
+.hero-content p {
   margin: 20px 0;
-  color: #cbd5f5;
+  color: #d1d5db;
 }
 
 .btn {
   background: #3b82f6;
-  padding: 12px 25px;
-  border: none;
+  padding: 15px 30px;
   color: white;
-  cursor: pointer;
+  text-decoration: none;
   border-radius: 5px;
 }
 
@@ -73,10 +94,6 @@ nav a {
 .section {
   padding: 80px 40px;
   text-align: center;
-}
-
-.section h2 {
-  margin-bottom: 20px;
 }
 
 /* SERVICES */
@@ -96,7 +113,6 @@ nav a {
 
 .card:hover {
   transform: translateY(-10px);
-  background: #1f2937;
 }
 
 /* PROJECTS */
@@ -106,9 +122,8 @@ nav a {
   gap: 20px;
 }
 
-.project {
-  height: 200px;
-  background: #1e293b;
+.project img {
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -128,10 +143,9 @@ input, textarea {
 footer {
   text-align: center;
   padding: 20px;
-  background: #020617;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -139,42 +153,11 @@ footer {
   background: #25D366;
   padding: 15px;
   border-radius: 50%;
-  font-size: 20px;
   color: white;
   text-decoration: none;
 }
-  .hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  padding: 0 60px;
-}
 
-.video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-}
 </style>
-
 </head>
 
 <body>
@@ -186,69 +169,84 @@ footer {
   </div>
 
   <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Proyectos</a>
-    <a href="#">Contacto</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section id="inicio" class="hero">
 
   <video autoplay muted loop playsinline class="video-bg">
-   <source src="video.mp4" type="video/mp4">
+    <source src="video.mp4" type="video/mp4">
   </video>
 
   <div class="overlay"></div>
 
   <div class="hero-content">
-    <h2>Soluciones en automatización y mantenimiento industrial</h2>
+    <h2>Automatización industrial de alto rendimiento</h2>
+    <p>Diseño mecánico, integración y mantenimiento especializado para optimizar procesos en planta.</p>
 
-<p>
-En WP Design optimizamos procesos productivos mediante diseño mecánico, integración de maquinaria y mantenimiento especializado.
-</p>
-
-<a href="https://wa.me/524331111971?text=Hola,%20quiero%20información"
-style="background:#3b82f6; padding:15px 25px; color:white; text-decoration:none; border-radius:5px;">
-Solicitar servicio
-</a>
-</p>
+    <a href="https://wa.me/524331111971?text=Hola,%20quiero%20información" class="btn">
+      Solicitar servicio
+    </a>
   </div>
 
-<section class="section">
-  <h2>Sobre Nosotros</h2>
+</section>
 
+<!-- SOBRE NOSOTROS -->
+<section class="section" data-aos="fade-up">
+  <h2>Sobre Nosotros</h2>
   <p>
-    WP Design es una empresa enfocada en soluciones industriales, especializada en diseño mecánico,
-    automatización y mantenimiento de maquinaria. Trabajamos directamente en planta,
-    ofreciendo soluciones eficientes que reducen tiempos muertos y mejoran la productividad.
+    WP Design es una empresa especializada en automatización, diseño mecánico y mantenimiento industrial,
+    enfocada en mejorar la productividad y eficiencia en planta.
   </p>
 </section>
-  
-<section class="section">
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section">
   <h2>Servicios</h2>
 
   <div class="services">
-    <div class="card">Diseño mecánico y maquinados</div>
-    <div class="card">Instalaciones eléctricas y neumáticas</div>
-    <div class="card">Herramentales para soldadura de vibración</div>
-    <div class="card">Mantenimiento de ultrasonido</div>
+    <div class="card" data-aos="zoom-in">Diseño mecánico y maquinados</div>
+    <div class="card" data-aos="zoom-in">Instalaciones eléctricas y neumáticas</div>
+    <div class="card" data-aos="zoom-in">Herramentales para soldadura</div>
+    <div class="card" data-aos="zoom-in">Mantenimiento industrial</div>
   </div>
-
 </section>
 
-<section class="section">
+<!-- PROYECTOS -->
+<section id="proyectos" class="section">
   <h2>Proyectos</h2>
 
   <div class="projects">
-    <div class="project"></div>
-    <div class="project"></div>
-    <div class="project"></div>
+    <div class="project" data-aos="fade-up">
+      <img src="https://images.unsplash.com/photo-1581091870622-3c1c6c5d9a7b">
+    </div>
+    <div class="project" data-aos="fade-up">
+      <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232">
+    </div>
+    <div class="project" data-aos="fade-up">
+      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+    </div>
   </div>
-
 </section>
 
-<section class="section contact">
+<!-- CLIENTES -->
+<section class="section">
+  <h2>Clientes</h2>
+  <div class="services">
+    <div class="card">Automotriz</div>
+    <div class="card">Manufactura</div>
+    <div class="card">Metal mecánica</div>
+    <div class="card">Industrial</div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section contact">
   <h2>Contáctanos</h2>
 
   <input type="text" placeholder="Nombre">
@@ -264,7 +262,12 @@ Solicitar servicio
   <p>© 2026 WP Design</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/524771234567">💬</a>
+<a class="whatsapp" href="https://wa.me/524331111971">💬</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>
