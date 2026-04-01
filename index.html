@@ -13,20 +13,47 @@ body{
     color:white;
 }
 
-/* NAV */
+/* NAV (ACTUALIZADO) */
 nav{
-    display:flex;
-    justify-content:space-between;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
     padding:20px 40px;
     background:rgba(0,0,0,0.8);
     position:fixed;
     width:100%;
     z-index:1000;
 }
+
+nav h2{
+    justify-self:start;
+}
+
+nav div{
+    justify-self:center;
+}
+
 nav a{
     color:white;
     margin:0 15px;
     text-decoration:none;
+    position:relative;
+}
+
+/* Animación línea */
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#25D366;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
 }
 
 /* HERO */
@@ -77,7 +104,7 @@ nav a{
     border-radius:8px;
 }
 
-/* ABOUT (NUEVO) */
+/* ABOUT */
 .about{
     padding:80px 40px;
     background:#0f172a;
@@ -208,30 +235,18 @@ footer{
 <div class="card"><h3>Programación y Puesta En Marcha De Estaciones De Ensamble</h3></div>
 </section>
 
-<!-- SECCIÓN NUEVA -->
 <section class="about">
 <h2>Quiénes Somos</h2>
 <p>Somos una empresa comprometida con la satisfacción del cliente basado en la confianza, la entrega, la congruencia y la empatía.
-    Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos a través de un equipo de colaboradores apasionados y comprometidos con su trabajo.
-Contamos con experiencia en SECTOR METAL-MECÁNICA, LÍNEA BLANCA, AUTOMOTRIZ, FARMACÉUTICA Y SECTOR PLASTICO</p>
+Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos.
+Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y plástico.</p>
 
 <div class="about-grid">
-
-<div class="about-card">
-<h3>Misión</h3>
-<p>Brindar soluciones industriales eficientes que mejoren la productividad de nuestros clientes.</p>
-</div>
-
-<div class="about-card">
-<h3>Visión</h3>
-<p>Ser líderes en automatización industrial en el Bajío.</p>
-</div>
-
-<div class="about-card">
-<h3>Valores</h3>
-<p>Compromiso<br>Calidad<br>Innovación<br>Responsabilidad</p>
-</div>
-
+<div class="about-card"><h3>Misión</h3><p>Ser una empresa líder en diseño mecánico, integración e innovación en maquinaría y herramentales, siendo adaptables a las
+nuevas tecnologías del futuro que nos conviertan en un elemento esencial para nuestros clientes.</p></div>
+<div class="about-card"><h3>Visión</h3><p>Ser comprometidos con la calidad del servicio, responsables con la satisfacción
+del cliente adaptándonos a las exigencias de sus productos y procesos, siendo una empresa con la filosofía de la integracion y el reconocimiento de las aportaciones de nuestros colaboradores.</p></div>
+<div class="about-card"><h3>Valores</h3><p>Honestidad<br>Calidad<br>Innovación<br>Responsabilidad<br>Cmpromiso<br>Lealtad<br>Excelencia<br>Profesionalismo</p></div>
 </div>
 </section>
 
