@@ -50,20 +50,22 @@ nav a{
     z-index:-1;
     filter:brightness(50%);
 }
+
 .hero-content{
-    position:relative;
     z-index:1;
+    animation:fadeIn 2s ease-in;
 }
+
 .hero h1{
     font-size:55px;
-    animation: slideDown 1.5s ease forwards;
 }
+
 .hero p{
     font-size:20px;
     max-width:700px;
     margin-top:15px;
-    animation: slideUp 1.5s ease forwards;
 }
+
 .hero button{
     padding:15px 25px;
     background:#25D366;
@@ -79,12 +81,10 @@ nav a{
     transform:scale(1.05);
 }
 
-/* Animaciones */
-@keyframes slideDown{
-    from{transform:translateY(-50px);opacity:0;} to{transform:translateY(0);opacity:1;}
-}
-@keyframes slideUp{
-    from{transform:translateY(50px);opacity:0;} to{transform:translateY(0);opacity:1;}
+/* Animación */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
 /* SERVICES */
@@ -143,7 +143,7 @@ input, textarea{
     font-weight:bold;
 }
 
-/* WHATSAPP PREMIUM */
+/* WHATSAPP ANIMADO */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -165,15 +165,12 @@ input, textarea{
 }
 .whatsapp:hover{
     max-width:200px;
-    padding:12px 20px;
     transform:scale(1.05);
 }
+
 .whatsapp2{
     right:150px;
     background:#128C7E;
-}
-.whatsapp span{
-    display:inline-block;
 }
 
 /* FOOTER */
@@ -184,6 +181,7 @@ footer{
 }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -195,30 +193,32 @@ footer{
 <a href="#contacto">Contacto</a>
 </div>
 </nav>
-    
+
 <!-- HERO CON VIDEO -->
 <section class="hero">
 
 <video autoplay muted loop id="videoHero">
     <source src="fondo.mp4" type="video/mp4">
-<section class="hero">
 </video>
+
 <div class="hero-content">
 <h1>Ingeniería y Automatización Industrial</h1>
 <p>Soluciones integrales en diseño mecánico, automatización, robótica y procesos industriales.</p>
+
 <button onclick="window.open('https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20cotizar%20un%20proyecto','_blank')">
 Contactar por WhatsApp
 </button>
 </div>
+
 </section>
 
 <section class="services" id="servicios">
 <div class="card"><h3>Diseño Mecánico y Maquinados</h3></div>
 <div class="card"><h3>Instalaciones Eléctricas y Neumáticas</h3></div>
-<div class="card"><h3>Diseño de Herramentales Para Soldadora De Vibración</h3></div>
+<div class="card"><h3>Fabricación de Herramentales Para Soldadoras De Vibración</h3></div>
 <div class="card"><h3>Mantenimiento Industrial</h3></div>
 <div class="card"><h3>Implementación, Puesta en Marcha & Set-up En Soldadoras De Vibración</h3></div>
-<div class="card"><h3>Fixtures y Estaciones de Ensamble</h3></div>
+<div class="card"><h3>Diseño De Fixtures y Estaciones de Ensamble</h3></div>
 <div class="card"><h3>Programación de Robots</h3></div>
 <div class="card"><h3>Programación y Puesta En Marcha De Estaciones De Ensamble</h3></div>
 </section>
@@ -240,12 +240,13 @@ Contactar por WhatsApp
 <textarea placeholder="Mensaje"></textarea>
 </section>
 
-<!-- BOTONES WHATSAPP PREMIUM -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/5214613766633?text=Hola,%20quiero%20información" target="_blank">
-<span>💬 Contacto 1</span>
+💬 Contacto 1
 </a>
+
 <a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola,%20quiero%20información" target="_blank">
-<span>💬 Contacto 2</span>
+💬 Contacto 2
 </a>
 
 <footer>
