@@ -3,247 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>WP Design</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+<title>WP Design | Automatización Industrial</title>
 
 <style>
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: #0b0f19;
-  color: white;
-}
-
-/* HEADER */
-header {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 60px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-  z-index: 1000;
-}
-
-header.scrolled {
-  background: rgba(0,0,0,0.9);
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b1120;
+    color:white;
 }
 
 /* NAV */
-nav {
-  display: flex;
-  gap: 40px;
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    background:rgba(0,0,0,0.8);
+    position:fixed;
+    width:100%;
+    z-index:1000;
 }
-
-nav a {
-  color: white;
-  text-decoration: none;
-  white-space: nowrap;
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
 }
 
 /* HERO */
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.hero{
+    height:100vh;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+.hero video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+    opacity:0.7;
+}
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+.hero h1{
+    font-size:55px;
+    animation: slideDown 1.5s ease forwards;
+}
+.hero p{
+    font-size:20px;
+    max-width:700px;
+    margin-top:15px;
+    animation: slideUp 1.5s ease forwards;
+}
+.hero button{
+    padding:15px 25px;
+    background:#25D366;
+    border:none;
+    color:white;
+    cursor:pointer;
+    margin-top:25px;
+    font-size:18px;
+    border-radius:8px;
+    transition:0.3s;
+}
+.hero button:hover{
+    transform:scale(1.05);
 }
 
-.video-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Animaciones */
+@keyframes slideDown{
+    from{transform:translateY(-50px);opacity:0;} to{transform:translateY(0);opacity:1;}
 }
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-
-.hero-content {
-  z-index: 2;
-  max-width: 700px;
-}
-
-.hero-content h2 {
-  font-size: 50px;
-}
-
-/* BOTÓN */
-.btn {
-  background: #3b82f6;
-  padding: 15px 30px;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-}
-
-/* SECTIONS */
-.section {
-  padding: 80px 40px;
-  text-align: center;
+@keyframes slideUp{
+    from{transform:translateY(50px);opacity:0;} to{transform:translateY(0);opacity:1;}
 }
 
 /* SERVICES */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
+.services{
+    padding:80px 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:25px;
 }
-
-.card {
-  background: #111827;
-  padding: 30px;
-  border-radius: 10px;
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-10px);
 }
 
 /* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
+.projects{
+    padding:80px 40px;
+    background:#020617;
 }
-
-.project img {
-  width: 100%;
-  border-radius: 10px;
+.projects h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:20px;
+}
+.projects img{
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+.projects img:hover{
+    transform:scale(1.05);
 }
 
 /* CONTACT */
-.contact {
-  background: #020617;
+.contact{
+    padding:80px 40px;
+}
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:5px;
+    border:none;
+}
+.contact p{
+    margin:10px 0;
+    font-weight:bold;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+/* WHATSAPP PREMIUM */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    border-radius:50px;
+    font-size:16px;
+    padding:12px 20px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0px 4px 8px rgba(0,0,0,0.3);
+    transition:0.3s all;
+    overflow:hidden;
+    white-space:nowrap;
+    max-width:60px;
+}
+.whatsapp:hover{
+    max-width:200px;
+    padding:12px 20px;
+    transform:scale(1.05);
+}
+.whatsapp2{
+    right:150px;
+    background:#128C7E;
+}
+.whatsapp span{
+    display:inline-block;
 }
 
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
 }
-
 </style>
 </head>
-
 <body>
 
-<header>
-  <div style="display:flex; align-items:center;">
-    <img src="logo.png" style="height:50px; margin-right:10px;">
-    <h1 style="margin:0;">WP Design</h1>
-  </div>
+<nav>
+<h2>WP Design</h2>
+<div>
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#contacto">Contacto</a>
+</div>
+</nav>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="inicio" class="hero">
-
-  <video autoplay muted loop playsinline class="video-bg">
-    <source src="video.mp4" type="video/mp4">
-  </video>
-
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-    <h2>Automatización industrial de alto rendimiento</h2>
-    <p>Diseño mecánico, integración y mantenimiento especializado.</p>
-
-    <a href="https://wa.me/524331111971" class="btn">
-      Solicitar servicio
-    </a>
-  </div>
-
+<section class="hero">
+<video autoplay muted loop>
+    <source src="assets/video.mp4" type="video/mp4">
+</video>
+<div class="hero-content">
+<h1>Ingeniería y Automatización Industrial</h1>
+<p>Soluciones integrales en diseño mecánico, automatización, robótica y procesos industriales.</p>
+<button onclick="window.open('https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20cotizar%20un%20proyecto','_blank')">
+Contactar por WhatsApp
+</button>
+</div>
 </section>
 
-<!-- SOBRE NOSOTROS -->
-<section class="section">
-  <h2>Sobre Nosotros</h2>
-  <p>
-    WP Design es una empresa especializada en automatización, diseño mecánico y mantenimiento industrial.
-  </p>
+<section class="services" id="servicios">
+<div class="card"><h3>Diseño Mecánico y Maquinados</h3></div>
+<div class="card"><h3>Instalaciones Eléctricas y Neumáticas</h3></div>
+<div class="card"><h3>Diseño de Herramentales de Soldadura</h3></div>
+<div class="card"><h3>Mantenimiento Industrial</h3></div>
+<div class="card"><h3>Puesta en Marcha & Set-up</h3></div>
+<div class="card"><h3>Soldadoras de Vibración</h3></div>
+<div class="card"><h3>Fixtures y Estaciones de Ensamble</h3></div>
+<div class="card"><h3>Programación de Robots</h3></div>
 </section>
 
-<!-- SERVICIOS -->
-<section id="servicios" class="section">
-  <h2>Servicios</h2>
-
-  <div class="services">
-    <div class="card">Diseño mecánico y maquinados</div>
-    <div class="card">Instalaciones eléctricas y neumáticas</div>
-    <div class="card">Herramentales para soldadura</div>
-    <div class="card">Mantenimiento industrial</div>
-  </div>
+<section class="projects" id="proyectos">
+<h2>Proyectos</h2>
+<div class="projects-grid">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b3b0c4b">
+<img src="https://images.unsplash.com/photo-1581091870627-3a0a6b8b1d3c">
+<img src="https://images.unsplash.com/photo-1581092334511-1f6f4c0a8c8d">
+</div>
 </section>
 
-<!-- PROYECTOS -->
-<section id="proyectos" class="section">
-  <h2>Proyectos</h2>
-
-  <div class="projects">
-
-    <div class="project">
-      <img src="Proyecto1.jpg">
-      <p>Integración de conveyor</p>
-    </div>
-
-    <div class="project">
-      <img src="Proyecto2.jpg">
-      <p>Diseño de herramental</p>
-    </div>
-
-    <div class="project">
-      <img src="Proyecto3.jpg">
-      <p>Mantenimiento industrial</p>
-    </div>
-
-  </div>
+<section class="contact" id="contacto">
+<h2>Contacto</h2>
+<p>Ubicación: Celaya, Guanajuato, México</p>
+<input type="text" placeholder="Nombre">
+<input type="email" placeholder="Correo">
+<textarea placeholder="Mensaje"></textarea>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="section contact">
-  <h2>Contacto</h2>
-  <p>Celaya, Guanajuato</p>
-</section>
+<!-- BOTONES WHATSAPP PREMIUM -->
+<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola,%20quiero%20información" target="_blank">
+<span>💬 Contacto 1</span>
+</a>
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola,%20quiero%20información" target="_blank">
+<span>💬 Contacto 2</span>
+</a>
 
 <footer>
-  <p>© 2026 WP Design</p>
+<p>© 2026 WP Design | Automatización Industrial | Celaya, Gto, México</p>
 </footer>
-
-<a class="whatsapp" href="https://wa.me/524331111971">💬</a>
-
-<script>
-window.addEventListener("scroll",()=>{
-document.querySelector("header").classList.toggle("scrolled",window.scrollY>50);
-});
-</script>
 
 </body>
 </html>
