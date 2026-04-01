@@ -29,7 +29,7 @@ nav a{
     text-decoration:none;
 }
 
-/* HERO CON VIDEO */
+/* HERO */
 .hero{
     position:relative;
     height:100vh;
@@ -75,16 +75,41 @@ nav a{
     margin-top:25px;
     font-size:18px;
     border-radius:8px;
-    transition:0.3s;
-}
-.hero button:hover{
-    transform:scale(1.05);
 }
 
-/* Animación */
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+/* ABOUT (NUEVO) */
+.about{
+    padding:80px 40px;
+    background:#0f172a;
+    text-align:center;
+}
+
+.about h2{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+}
+
+.about-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.about-card:hover{
+    transform:translateY(-10px);
 }
 
 /* SERVICES */
@@ -98,20 +123,12 @@ nav a{
     background:#1e293b;
     padding:25px;
     border-radius:10px;
-    transition:0.3s;
-}
-.card:hover{
-    transform:translateY(-10px);
 }
 
 /* PROJECTS */
 .projects{
     padding:80px 40px;
     background:#020617;
-}
-.projects h2{
-    text-align:center;
-    margin-bottom:40px;
 }
 .projects-grid{
     display:grid;
@@ -121,53 +138,28 @@ nav a{
 .projects img{
     width:100%;
     border-radius:10px;
-    transition:0.3s;
-}
-.projects img:hover{
-    transform:scale(1.05);
 }
 
 /* CONTACT */
 .contact{
     padding:80px 40px;
 }
-input, textarea{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:5px;
-    border:none;
-}
-.contact p{
-    margin:10px 0;
-    font-weight:bold;
-}
 
-/* WHATSAPP ANIMADO */
+/* WHATSAPP */
 .whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
-    color:white;
-    border-radius:50px;
-    font-size:16px;
     padding:12px 20px;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    box-shadow:0px 4px 8px rgba(0,0,0,0.3);
-    transition:0.3s all;
-    overflow:hidden;
-    white-space:nowrap;
+    border-radius:50px;
     max-width:60px;
+    overflow:hidden;
+    transition:0.3s;
 }
 .whatsapp:hover{
     max-width:200px;
-    transform:scale(1.05);
 }
-
 .whatsapp2{
     right:150px;
     background:#128C7E;
@@ -194,33 +186,53 @@ footer{
 </div>
 </nav>
 
-<!-- HERO CON VIDEO -->
 <section class="hero">
-
 <video autoplay muted loop id="videoHero">
-    <source src="fondo.mp4" type="video/mp4">
+<source src="fondo.mp4" type="video/mp4">
 </video>
 
 <div class="hero-content">
 <h1>Ingeniería y Automatización Industrial</h1>
-<p>Soluciones integrales en diseño mecánico, automatización, robótica y procesos industriales.</p>
-
-<button onclick="window.open('https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20cotizar%20un%20proyecto','_blank')">
-Contactar por WhatsApp
-</button>
+<p>Soluciones integrales en diseño mecánico, automatización y procesos industriales.</p>
 </div>
-
 </section>
 
 <section class="services" id="servicios">
 <div class="card"><h3>Diseño Mecánico y Maquinados</h3></div>
 <div class="card"><h3>Instalaciones Eléctricas y Neumáticas</h3></div>
-<div class="card"><h3>Fabricación de Herramentales Para Soldadoras De Vibración</h3></div>
+<div class="card"><h3>Fabricación De Herramentales para Soldadoras De Vibración</h3></div>
 <div class="card"><h3>Mantenimiento Industrial</h3></div>
-<div class="card"><h3>Implementación, Puesta en Marcha & Set-up En Soldadoras De Vibración</h3></div>
-<div class="card"><h3>Diseño De Fixtures y Estaciones de Ensamble</h3></div>
+<div class="card"><h3>Implementación, Puesta En Marcha & Set-Up Para Soldadoras De Vibración</h3></div>
+<div class="card"><h3>Diseño De Fixtures y Estaciones Para Procesos De Ensamble</h3></div>
 <div class="card"><h3>Programación de Robots</h3></div>
 <div class="card"><h3>Programación y Puesta En Marcha De Estaciones De Ensamble</h3></div>
+</section>
+
+<!-- SECCIÓN NUEVA -->
+<section class="about">
+<h2>Quiénes Somos</h2>
+<p>Somos una empresa comprometida con la satisfacción del cliente basado en la confianza, la entrega, la congruencia y la empatía.
+    Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos a través de un equipo de colaboradores apasionados y comprometidos con su trabajo.
+Contamos con experiencia en SECTOR METAL-MECÁNICA, LÍNEA BLANCA, AUTOMOTRIZ, FARMACÉUTICA Y SECTOR PLASTICO</p>
+
+<div class="about-grid">
+
+<div class="about-card">
+<h3>Misión</h3>
+<p>Brindar soluciones industriales eficientes que mejoren la productividad de nuestros clientes.</p>
+</div>
+
+<div class="about-card">
+<h3>Visión</h3>
+<p>Ser líderes en automatización industrial en el Bajío.</p>
+</div>
+
+<div class="about-card">
+<h3>Valores</h3>
+<p>Compromiso<br>Calidad<br>Innovación<br>Responsabilidad</p>
+</div>
+
+</div>
 </section>
 
 <section class="projects" id="proyectos">
@@ -234,23 +246,14 @@ Contactar por WhatsApp
 
 <section class="contact" id="contacto">
 <h2>Contacto</h2>
-<p>Ubicación: Celaya, Guanajuato, México</p>
-<input type="text" placeholder="Nombre">
-<input type="email" placeholder="Correo">
-<textarea placeholder="Mensaje"></textarea>
+<p>Celaya, Guanajuato, México</p>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola,%20quiero%20información" target="_blank">
-💬 Contacto 1
-</a>
-
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola,%20quiero%20información" target="_blank">
-💬 Contacto 2
-</a>
+<a class="whatsapp" href="https://wa.me/5214613766633" target="_blank">💬</a>
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971" target="_blank">💬</a>
 
 <footer>
-<p>© 2026 WP Design | Automatización Industrial | Celaya, Gto, México</p>
+<p>© 2026 WP Design</p>
 </footer>
 
 </body>
