@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WP Design | Automatización Industrial</title>
+<title>WP Design | Ingeniería y Automatización Industrial en Celaya</title>
+<meta name="description" content="WP Design ofrece soluciones integrales en diseño mecánico, automatización industrial y procesos productivos en Celaya, Guanajuato.">
+<meta name="keywords" content="WP Design, automatización industrial, diseño mecánico, Celaya, proyectos industriales, herramentales, mantenimiento industrial">
+<meta name="robots" content="index, follow">
 
 <style>
 body{
@@ -13,10 +16,10 @@ body{
     color:white;
 }
 
-/* NAV - Logo a la izquierda, menú centrado */
+/* NAV */
 nav{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
+    display:flex;
+    justify-content:center;
     align-items:center;
     padding:20px 40px;
     background:rgba(0,0,0,0.8);
@@ -26,12 +29,13 @@ nav{
 }
 
 nav h2{
-    justify-self:start;
-    margin:0;
+    margin-right:40px;
 }
 
 nav div{
-    justify-self:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 nav div a{
@@ -214,27 +218,34 @@ nav div a:hover::after{
     padding:80px 40px;
 }
 
-/* WHATSAPP - solo icono */
+/* WHATSAPP */
 .whatsapp{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
-    width:60px;
-    height:60px;
-    border-radius:50%;
+    padding:12px 20px;
+    border-radius:50px;
+    max-width:60px;
+    overflow:hidden;
+    transition:0.3s;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:24px;
-    text-decoration:none;
-    color:white;
-    z-index:1000;
-    transition:0.3s;
 }
-
+.whatsapp:hover{
+    max-width:200px;
+}
+.whatsapp span{
+    display:none;
+    margin-left:10px;
+    font-weight:bold;
+}
+.whatsapp:hover span{
+    display:inline;
+}
 .whatsapp2{
-    right:100px;
+    right:150px;
     background:#128C7E;
 }
 
@@ -266,7 +277,7 @@ footer{
 </video>
 
 <div class="hero-content">
-<h1>Ingeniería y Automatización Industrial</h1>
+<h1>WP Design - Ingeniería y Automatización Industrial</h1>
 <p>Soluciones integrales en diseño mecánico, automatización y procesos industriales.</p>
 </div>
 </section>
@@ -340,9 +351,8 @@ Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y 
 </section>
 
 <!-- WhatsApp con mensaje automático -->
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank">💬</a>
-
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20necesito%20asistencia%20con%20un%20proyecto" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20automatizaci%C3%B3n%20industrial." target="_blank">💬</a>
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20industrial." target="_blank">💬</a>
 
 <footer>
 <p>© 2024 WP Design</p>
