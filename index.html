@@ -13,10 +13,10 @@ body{
     color:white;
 }
 
-/* NAV (ACTUALIZADO) */
+/* NAV */
 nav{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
+    display:flex;
+    justify-content:space-between;
     align-items:center;
     padding:20px 40px;
     background:rgba(0,0,0,0.8);
@@ -26,14 +26,10 @@ nav{
 }
 
 nav h2{
-    justify-self:start;
+    margin:0;
 }
 
-nav div{
-    justify-self:center;
-}
-
-nav a{
+nav div a{
     color:white;
     margin:0 15px;
     text-decoration:none;
@@ -41,7 +37,7 @@ nav a{
 }
 
 /* Animación línea */
-nav a::after{
+nav div a::after{
     content:'';
     position:absolute;
     width:0;
@@ -52,7 +48,7 @@ nav a::after{
     transition:0.3s;
 }
 
-nav a:hover::after{
+nav div a:hover::after{
     width:100%;
 }
 
@@ -202,6 +198,12 @@ nav a:hover::after{
     transform:scale(1.1);
 }
 
+/* LOCATION */
+.location{
+    padding:80px 40px;
+    text-align:center;
+}
+
 /* CONTACT */
 .contact{
     padding:80px 40px;
@@ -218,9 +220,20 @@ nav a:hover::after{
     max-width:60px;
     overflow:hidden;
     transition:0.3s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 .whatsapp:hover{
     max-width:200px;
+}
+.whatsapp span{
+    display:none;
+    margin-left:10px;
+    font-weight:bold;
+}
+.whatsapp:hover span{
+    display:inline;
 }
 .whatsapp2{
     right:150px;
@@ -244,13 +257,13 @@ footer{
 <a href="#">Inicio</a>
 <a href="#servicios">Servicios</a>
 <a href="#proyectos">Proyectos</a>
-<a href="#nuestros clientes">Nuestros Clientes</a>
-<a href="#ubicación">Ubicación</a>
+<a href="#clientes">Nuestros Clientes</a>
+<a href="#ubicacion">Ubicación</a>
 </div>
 </nav>
 
 <section class="hero">
-<video autoplay muted loop id="videoHero">
+<video autoplay muted loop id="videoHero" poster="poster.jpg">
 <source src="video.mp4" type="video/mp4">
 </video>
 
@@ -290,42 +303,41 @@ Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y 
 <div class="projects-grid">
 
   <div class="project-item">
-    <img src="transportador-cadena.jpg">
-    <h3>transportador de cadena</h3>
+    <img src="transportador-cadena.jpg" alt="Transportador de cadena">
+    <h3>Transportador de cadena</h3>
     <p>Optimización para mejorar estabilidad y evitar fallas en operación.</p>
   </div>
 
   <div class="project-item">
-    <img src="herramental-soldadura.jpg">
-    <h3>herramental de soldadura</h3>
+    <img src="herramental-soldadura.jpg" alt="Herramental de soldadura">
+    <h3>Herramental de soldadura</h3>
     <p>Diseño y fabricación de fixture para mejorar precisión en ensamble.</p>
   </div>
 
   <div class="project-item">
-    <img src="transportador.jpeg">
+    <img src="transportador.jpeg" alt="Transportador">
     <h3>Transportador</h3>
     <p>Rediseño mecánico para lograr flujo continuo y operación eficiente.</p>
   </div>
 </div>
 </section>
 
-<!-- CLIENTES -->
-<section class="clientes">
+<section class="clientes" id="clientes">
 <h2>Nuestros Clientes</h2>
 <div class="logos">
-<img src="cliente1.jpg">
-<img src="cliente2.png">
-<img src="cliente3.png">
-<img src="cliente4.png">
-<img src="cliente 5.jpg">
-<img src="cliente6.webp">
-<img src="cliente7.png">
+<img src="cliente1.jpg" alt="Logo Cliente 1">
+<img src="cliente2.png" alt="Logo Cliente 2">
+<img src="cliente3.png" alt="Logo Cliente 3">
+<img src="cliente4.png" alt="Logo Cliente 4">
+<img src="cliente5.jpg" alt="Logo Cliente 5">
+<img src="cliente6.webp" alt="Logo Cliente 6">
+<img src="cliente7.png" alt="Logo Cliente 7">
 </div>
 </section>
 
 <section class="location" id="ubicacion">
 <h2>Ubicación</h2>
-<p>Av. México-Japón 412, Emiliano Zapata
+<p>Av. México-Japón 412, Emiliano Zapata,<br>
     Celaya, Guanajuato</p>
 </section>
 
