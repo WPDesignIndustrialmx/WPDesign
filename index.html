@@ -9,43 +9,43 @@
 <meta name="robots" content="index, follow">
 
 <style>
-body{
+/* RESET Y BODY */
+body, html{
     margin:0;
-    font-family:Arial, sans-serif;
+    padding:0;
+    font-family: Arial, sans-serif;
     background:#0b1120;
     color:white;
+    scroll-behavior: smooth;
 }
 
 /* NAV */
-nav{
+header nav{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    padding:20px 40px;
-    background:rgba(0,0,0,0.8);
+    padding:15px 40px;
+    background:rgba(0,0,0,0.85);
     position:fixed;
+    top:0;
     width:100%;
     z-index:1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-nav h2{
-    margin-right:40px;
+header nav h2{
+    margin:0;
 }
 
-nav div{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-nav div a{
+header nav div a{
     color:white;
     margin:0 15px;
     text-decoration:none;
     position:relative;
+    font-weight:bold;
 }
 
-nav div a::after{
+header nav div a::after{
     content:'';
     position:absolute;
     width:0;
@@ -56,7 +56,7 @@ nav div a::after{
     transition:0.3s;
 }
 
-nav div a:hover::after{
+header nav div a:hover::after{
     width:100%;
 }
 
@@ -69,6 +69,7 @@ nav div a:hover::after{
     align-items:center;
     text-align:center;
     overflow:hidden;
+    padding-top:80px; /* evita que nav tape contenido */
 }
 
 #videoHero{
@@ -84,28 +85,33 @@ nav div a:hover::after{
 
 .hero-content{
     z-index:1;
-    animation:fadeIn 2s ease-in;
+    animation: fadeIn 2s ease-in;
 }
 
 .hero h1{
-    font-size:55px;
+    font-size:8vw;
+    margin:0;
 }
 
 .hero p{
-    font-size:20px;
+    font-size:2vw;
     max-width:700px;
     margin-top:15px;
 }
 
-/* JUSTIFICAR TEXTOS */
-p {
-    text-align: justify;
-    text-justify: inter-word;
+/* ANIMACIÓN FADE IN */
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(20px);}
+    to { opacity:1; transform: translateY(0);}
+}
+
+/* SECCIONES */
+section{
+    padding:80px 20px;
 }
 
 /* ABOUT */
 .about{
-    padding:80px 40px;
     background:#0f172a;
     text-align:center;
 }
@@ -119,6 +125,8 @@ p {
     max-width:800px;
     margin:auto;
     margin-bottom:40px;
+    text-align:justify;
+    text-justify: inter-word;
 }
 
 .about-grid{
@@ -127,36 +135,41 @@ p {
     gap:20px;
 }
 
-/* CARDS PROFESIONALES */
-.card, .about-card, .project-item {
+.about-card{
     background:#1e293b;
     padding:25px;
     border-radius:10px;
     text-align:justify;
-    text-justify: inter-word;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card:hover, .about-card:hover, .project-item:hover {
+.about-card:hover{
     transform: translateY(-15px) scale(1.03);
     box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
 
-.about-card{
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
 /* SERVICES */
 .services{
-    padding:80px 40px;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
     gap:25px;
 }
 
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    text-align:justify;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover{
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
 /* PROJECTS */
 .projects{
-    padding:80px 40px;
     background:#020617;
 }
 
@@ -173,8 +186,6 @@ p {
 
 /* CLIENTES */
 .clientes{
-    padding:80px 40px;
-    background:#0b1120;
     text-align:center;
 }
 
@@ -208,38 +219,28 @@ p {
 
 /* LOCATION */
 .location{
-    padding:80px 40px;
     text-align:center;
 }
 
 /* WHATSAPP */
-.whatsapp{
+.whatsapp, .whatsapp2{
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
-    padding:12px 20px;
+    padding:12px;
     border-radius:50px;
-    max-width:60px;
-    overflow:hidden;
-    transition:0.3s;
     display:flex;
     align-items:center;
     justify-content:center;
+    font-size:24px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
 }
-.whatsapp:hover{
-    max-width:200px;
-}
-.whatsapp span{
-    display:none;
-    margin-left:10px;
-    font-weight:bold;
-}
-.whatsapp:hover span{
-    display:inline;
-}
+
 .whatsapp2{
-    right:150px;
+    right:90px;
     background:#128C7E;
 }
 
@@ -249,12 +250,26 @@ footer{
     padding:20px;
     background:#020617;
 }
+
+/* RESPONSIVE */
+@media (max-width:768px){
+    .hero h1{
+        font-size:10vw;
+    }
+    .hero p{
+        font-size:3vw;
+    }
+    header nav{
+        flex-direction:column;
+        gap:10px;
+    }
+}
 </style>
 </head>
-
 <body>
 
-<nav>
+<header>
+<nav role="navigation">
 <h2>WP Design</h2>
 <div>
 <a href="#">Inicio</a>
@@ -264,12 +279,13 @@ footer{
 <a href="#ubicacion">Ubicación</a>
 </div>
 </nav>
+</header>
 
+<main>
 <section class="hero">
-<video autoplay muted loop id="videoHero" poster="poster.jpg">
+<video autoplay muted loop id="videoHero" poster="poster.jpg" preload="metadata">
 <source src="video.mp4" type="video/mp4">
 </video>
-
 <div class="hero-content">
 <h1>WP Design - Ingeniería y Automatización Industrial</h1>
 <p>Soluciones integrales en diseño mecánico, automatización y procesos industriales.</p>
@@ -279,24 +295,23 @@ footer{
 <section class="services" id="servicios">
 <div class="card"><h3>Diseño Mecánico y Maquinados</h3></div>
 <div class="card"><h3>Instalaciones Eléctricas y Neumáticas</h3></div>
-<div class="card"><h3>Fabricación De Herramentales para Soldadoras De Vibración</h3></div>
+<div class="card"><h3>Fabricación de Herramentales para Soldadoras de Vibración</h3></div>
 <div class="card"><h3>Mantenimiento Industrial</h3></div>
-<div class="card"><h3>Implementación, Puesta En Marcha & Set-Up Para Soldadoras De Vibración</h3></div>
-<div class="card"><h3>Diseño De Fixtures y Estaciones Para Procesos De Ensamble</h3></div>
+<div class="card"><h3>Implementación, Puesta en Marcha & Set-Up para Soldadoras de Vibración</h3></div>
+<div class="card"><h3>Diseño de Fixtures y Estaciones para Procesos de Ensamble</h3></div>
 <div class="card"><h3>Programación de Robots</h3></div>
-<div class="card"><h3>Programación y Puesta En Marcha De Estaciones De Ensamble</h3></div>
-<div class="card"><h3>Armado De Tableros Electronicos</h3></div>
+<div class="card"><h3>Programación y Puesta en Marcha de Estaciones de Ensamble</h3></div>
+<div class="card"><h3>Armado de Tableros Electrónicos</h3></div>
 </section>
 
 <section class="about">
 <h2>Quiénes Somos</h2>
-<p>Somos una empresa comprometida con la satisfacción del cliente basado en la confianza, la entrega, la congruencia y la empatía.
+<p>Somos una empresa comprometida con la satisfacción del cliente basada en la confianza, la entrega, la congruencia y la empatía.
 Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos.
 Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y plástico.</p>
-
 <div class="about-grid">
-<div class="about-card"><h3>Misión</h3><p>Somos una empresa líder en diseño mecánico, integración e innovación en maquinaría y herramentales, siendo adaptables a las nuevas tecnologías del futuro que nos conviertan en un elemento esencial para nuestros clientes.</p></div>
-<div class="about-card"><h3>Visión</h3><p>Ser comprometidos con la calidad del servicio, responsables con la satisfacción del cliente adaptándonos a las exigencias de sus productos y procesos, siendo una empresa con la filosofía de la integracion y el reconocimiento de las aportaciones de nuestros colaboradores.</p></div>
+<div class="about-card"><h3>Misión</h3><p>Somos una empresa líder en diseño mecánico, integración e innovación en maquinaria y herramentales, adaptándonos a nuevas tecnologías para ser un elemento esencial para nuestros clientes.</p></div>
+<div class="about-card"><h3>Visión</h3><p>Ser comprometidos con la calidad del servicio y responsables con la satisfacción del cliente, adaptándonos a las exigencias de sus productos y procesos, siendo una empresa con filosofía de integración y reconocimiento de nuestros colaboradores.</p></div>
 <div class="about-card"><h3>Valores</h3><p>Honestidad<br>Calidad<br>Innovación<br>Responsabilidad<br>Compromiso<br>Lealtad<br>Excelencia<br>Profesionalismo</p></div>
 </div>
 </section>
@@ -304,34 +319,31 @@ Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y 
 <section class="projects" id="proyectos">
 <h2>Proyectos</h2>
 <div class="projects-grid">
-
-  <div class="project-item">
-    <img src="transportador-cadena.jpg" alt="Transportador de cadena">
-    <h3>Transportador de cadena</h3>
-    <p>Optimización para mejorar estabilidad y evitar fallas en operación.</p>
-  </div>
-
-  <div class="project-item">
-    <img src="herramental-soldadura.jpg" alt="Herramental de soldadura">
-    <h3>Herramental de soldadura</h3>
-    <p>Diseño y fabricación de fixture para mejorar precisión en ensamble.</p>
-  </div>
-
-  <div class="project-item">
-    <img src="transportador.jpeg" alt="Transportador">
-    <h3>Transportador</h3>
-    <p>Rediseño mecánico para lograr flujo continuo y operación eficiente.</p>
-  </div>
+<div class="project-item">
+<img src="transportador-cadena.jpg" alt="Transportador de cadena para línea de ensamble">
+<h3>Transportador de cadena</h3>
+<p>Optimización para mejorar estabilidad y evitar fallas en operación.</p>
+</div>
+<div class="project-item">
+<img src="herramental-soldadura.jpg" alt="Herramental de soldadura para fixture">
+<h3>Herramental de soldadura</h3>
+<p>Diseño y fabricación de fixture para mejorar precisión en ensamble.</p>
+</div>
+<div class="project-item">
+<img src="transportador.jpeg" alt="Transportador mecánico industrial">
+<h3>Transportador</h3>
+<p>Rediseño mecánico para lograr flujo continuo y operación eficiente.</p>
+</div>
 </div>
 </section>
 
 <section class="clientes" id="clientes">
 <h2>Nuestros Clientes</h2>
 <div class="logos">
-<img src="cliente1.jpg" alt="Logo Cliente 1">
-<img src="cliente2.png" alt="Logo Cliente 2">
-<img src="cliente3.png" alt="Logo Cliente 3">
-<img src="cliente4.png" alt="Logo Cliente 4">
+<img src="cliente1.jpg" alt="Logo Cliente 1 - Industria Automotriz">
+<img src="cliente2.png" alt="Logo Cliente 2 - Industria Metal Mecánica">
+<img src="cliente3.png" alt="Logo Cliente 3 - Industria Farmacéutica">
+<img src="cliente4.png" alt="Logo Cliente 4 - Plásticos">
 <img src="cliente5.jpg" alt="Logo Cliente 5">
 <img src="cliente6.webp" alt="Logo Cliente 6">
 <img src="cliente7.png" alt="Logo Cliente 7">
@@ -340,15 +352,15 @@ Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y 
 
 <section class="location" id="ubicacion">
 <h2>Ubicación</h2>
-<p>Av. México-Japón 412, Emiliano Zapata,<br>
-    Celaya, Guanajuato</p>
+<p>Av. México-Japón 412, Emiliano Zapata,<br>Celaya, Guanajuato</p>
 </section>
+</main>
 
 <!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20automatizaci%C3%B3n%20industrial." target="_blank">💬</a>
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20industrial." target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5214613766633" target="_blank" aria-label="Enviar mensaje a WP Design vía WhatsApp">💬</a>
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971" target="_blank" aria-label="Enviar mensaje para cotización a WP Design vía WhatsApp">💬</a>
 
-<footer>
+<footer role="contentinfo">
 <p>© 2024 WP Design</p>
 </footer>
 
