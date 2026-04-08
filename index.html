@@ -6,7 +6,6 @@
 <title>WP Design | Diseño, integracion, e implementación en procesos de ensamble</title>
 
 <meta name="description" content="WP Design ofrece soluciones integrales en diseño mecánico, automatización industrial y procesos productivos.">
-
 <meta name="keywords" content="WP Design, automatización industrial, diseño mecánico, proyectos industriales, herramentales, mantenimiento industrial">
 <meta name="robots" content="index, follow">
 
@@ -17,12 +16,32 @@
 body{margin:0;font-family:Arial;background:#0b1120;color:white;}
 
 /* NAV */
-nav{display:flex;justify-content:center;align-items:center;padding:20px 40px;background:rgba(0,0,0,0.8);position:fixed;width:100%;z-index:1000;backdrop-filter:blur(10px);} 
+nav{
+display:flex;
+justify-content:space-between; /* 🔥 cambiado */
+align-items:center;
+padding:20px 40px;
+background:rgba(0,0,0,0.8);
+position:fixed;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(10px);
+}
 
-nav h2{margin-right:40px;}
+nav div{
+display:flex;
+align-items:center;
+}
+
 nav div a{color:white;margin:0 15px;text-decoration:none;position:relative;}
 nav div a::after{content:'';position:absolute;width:0;height:2px;background:#25D366;left:0;bottom:-5px;transition:0.3s;}
 nav div a:hover::after{width:100%;}
+
+/* LOGO */
+.logo{
+height:55px;
+width:auto;
+}
 
 /* HERO */
 .hero{position:relative;height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
@@ -66,7 +85,10 @@ nav div a:hover::after{width:100%;}
 <body>
 
 <nav>
-<h2>WP Design</h2>
+<a href="#">
+  <img src="logo.png" alt="WP Design" class="logo">
+</a>
+
 <div>
 <a href="#">Inicio</a>
 <a href="#servicios">Servicios</a>
