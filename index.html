@@ -5,77 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WP Design | Automatización Industrial</title>
 
-<!-- Fuente profesional -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- Iconos -->
 <script src="https://kit.fontawesome.com/a2d9d6a64b.js" crossorigin="anonymous"></script>
 
 <style>
 body{margin:0;font-family:'Inter', sans-serif;background:#0b1120;color:white;}
 
-/* NAV mejorado */
 nav{display:flex;justify-content:center;align-items:center;padding:20px;backdrop-filter: blur(10px);background:rgba(0,0,0,0.6);position:fixed;width:100%;z-index:1000;}
-nav a{color:white;margin:0 15px;text-decoration:none;}
+nav a{color:white;margin:0 15px;text-decoration:none;position:relative;}
+nav a::after{content:'';position:absolute;width:0;height:2px;background:#25D366;left:0;bottom:-5px;transition:0.3s;}
+nav a:hover::after{width:100%;}
 
-/* HERO */
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.hero h1{font-size:60px;font-weight:600;}
-.hero p{opacity:0.8;}
+.hero{position:relative;height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
+#videoHero{position:absolute;width:100%;height:100%;object-fit:cover;filter:brightness(50%);}
+.hero-content{z-index:1;}
+.hero h1{font-size:60px;}
 
-/* SERVICES */
-.services{padding:100px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.services{padding:80px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
 
-.card{background:linear-gradient(145deg,#1e293b,#0f172a);padding:30px;border-radius:15px;cursor:pointer;transition:all 0.4s ease;border:1px solid rgba(255,255,255,0.05);position:relative;overflow:hidden;text-align:center;}
-.card i{font-size:40px;margin-bottom:15px;display:block;}
-
-.card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(37,211,102,0.3),transparent);transition:0.5s;}
-.card:hover::before{left:100%;}
+.card{background:linear-gradient(145deg,#1e293b,#0f172a);padding:25px;border-radius:15px;cursor:pointer;transition:0.4s;border:1px solid rgba(255,255,255,0.05);text-align:center;}
 .card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.6);}
+.card i{font-size:40px;margin-bottom:10px;}
 
-/* GALERIA */
-#galeria{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;flex-direction:column;z-index:2000;}
+.projects{padding:80px 40px;background:#020617;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.projects img{width:100%;border-radius:10px;}
 
-#imagenes{display:flex;gap:20px;padding:30px;overflow-x:auto;}
+.about{padding:80px 40px;background:#0f172a;text-align:center;}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;}
 
-#imagenes img{height:220px;width:350px;object-fit:cover;border-radius:12px;transition:0.4s;filter:brightness(0.85);}
-#imagenes img:hover{transform:scale(1.08);filter:brightness(1);}
+.clientes{padding:80px 40px;text-align:center;}
+.logos{display:flex;justify-content:center;flex-wrap:wrap;gap:40px;margin-top:30px;}
+.logos img{width:120px;background:white;padding:10px;border-radius:10px;filter:grayscale(100%);opacity:0.7;transition:0.3s;}
+.logos img:hover{filter:grayscale(0);opacity:1;transform:scale(1.1);}
 
-.cerrar{position:absolute;top:20px;right:30px;font-size:35px;cursor:pointer;}
+.location{padding:80px 40px;text-align:center;background:#020617;}
 
-/* NUEVO: BOTÓN CTA */
-.cta{
-    margin-top:30px;
-    padding:15px 30px;
-    background:#25D366;
-    border:none;
-    border-radius:30px;
-    color:white;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-}
-.cta:hover{transform:scale(1.05);background:#1ebe5d;}
+#galeria{display:none;position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.95);top:0;left:0;justify-content:center;align-items:center;flex-direction:column;z-index:2000;}
+#imagenes{display:flex;gap:20px;overflow-x:auto;padding:20px;}
+#imagenes img{width:300px;border-radius:10px;}
 
-/* NUEVO: animaciones scroll */
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-.fade.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* WHATSAPP PRO */
 .wa-container{position:fixed;bottom:20px;right:20px;z-index:3000;}
-.wa-button{background:#25D366;color:white;width:60px;height:60px;display:flex;justify-content:center;align-items:center;border-radius:50%;font-size:28px;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,0.4);transition:0.3s;}
-.wa-button:hover{transform:scale(1.1);}
-.wa-options{display:flex;flex-direction:column;margin-bottom:10px;opacity:0;transform:translateY(20px);pointer-events:none;transition:0.3s;}
-.wa-options a{background:#1e293b;color:white;text-decoration:none;padding:10px 15px;border-radius:10px;margin-top:8px;font-size:14px;transition:0.3s;}
-.wa-options a:hover{background:#25D366;}
-.wa-options.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+.wa-button{background:#25D366;color:white;width:60px;height:60px;display:flex;justify-content:center;align-items:center;border-radius:50%;font-size:28px;cursor:pointer;}
+.wa-options{display:none;flex-direction:column;margin-bottom:10px;}
+.wa-options a{background:#1e293b;color:white;padding:10px;border-radius:10px;margin-top:5px;text-decoration:none;}
 
 </style>
 </head>
@@ -85,141 +58,72 @@ nav a{color:white;margin:0 15px;text-decoration:none;}
 <nav>
 <a href="#">Inicio</a>
 <a href="#servicios">Servicios</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#clientes">Clientes</a>
 </nav>
 
-<section class="hero fade">
+<section class="hero">
+<video autoplay muted loop id="videoHero">
+<source src="video.mp4" type="video/mp4">
+</video>
+<div class="hero-content">
 <h1>WP Design</h1>
 <p>Ingeniería y Automatización Industrial</p>
-<button class="cta">Solicitar Cotización</button>
+</div>
 </section>
 
-<section class="services fade" id="servicios">
-
-<div class="card" onclick="abrirGaleria('diseno')">
-<i class="fas fa-drafting-compass"></i>
-<h3>Diseño Mecánico</h3>
-</div>
-
-<div class="card" onclick="abrirGaleria('instalaciones')">
-<i class="fas fa-bolt"></i>
-<h3>Instalaciones</h3>
-</div>
-
-<div class="card" onclick="abrirGaleria('herramentales')">
-<i class="fas fa-tools"></i>
-<h3>Herramentales</h3>
-</div>
-
-<div class="card" onclick="abrirGaleria('mantenimiento')">
-<i class="fas fa-industry"></i>
-<h3>Mantenimiento</h3>
-</div>
-
-<div class="card" onclick="abrirGaleria('robots')">
-<i class="fas fa-robot"></i>
-<h3>Robots</h3>
-</div>
-
-<div class="card" onclick="abrirGaleria('ensamble')">
-<i class="fas fa-cogs"></i>
-<h3>Ensamble</h3>
-</div>
-
+<section class="services" id="servicios">
+<div class="card" onclick="abrirGaleria('diseno')"><i class="fas fa-drafting-compass"></i><h3>Diseño Mecánico</h3></div>
+<div class="card" onclick="abrirGaleria('instalaciones')"><i class="fas fa-bolt"></i><h3>Instalaciones</h3></div>
+<div class="card" onclick="abrirGaleria('robots')"><i class="fas fa-robot"></i><h3>Robots</h3></div>
 </section>
 
-<!-- ABOUT / QUIENES SOMOS -->
-<section style="padding:80px 40px;background:#0f172a;text-align:center;">
+<section class="projects" id="proyectos">
+<h2>Proyectos</h2>
+<div class="projects-grid">
+<img src="transportador-cadena.jpg">
+<img src="herramental-soldadura.jpg">
+<img src="transportador.jpeg">
+</div>
+</section>
+
+<section class="about">
 <h2>Quiénes Somos</h2>
-<p style="max-width:800px;margin:auto;">Somos una empresa comprometida con la satisfacción del cliente, enfocados en diseño, automatización e innovación industrial.</p>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:40px;">
-
-<div class="card"><h3>Misión</h3><p>Brindar soluciones innovadoras en ingeniería y automatización.</p></div>
-
-<div class="card"><h3>Visión</h3><p>Ser líderes en integración tecnológica industrial.</p></div>
-
-<div class="card"><h3>Valores</h3><p>Calidad, innovación, compromiso, profesionalismo.</p></div>
-
+<p>Empresa enfocada en soluciones industriales y automatización.</p>
+<div class="about-grid">
+<div class="card"><h3>Misión</h3><p>Innovar procesos industriales.</p></div>
+<div class="card"><h3>Visión</h3><p>Ser líderes en automatización.</p></div>
+<div class="card"><h3>Valores</h3><p>Calidad, innovación, compromiso.</p></div>
 </div>
 </section>
 
-<!-- CLIENTES -->
-<section style="padding:80px 40px;text-align:center;">
-<h2>Nuestros Clientes</h2>
-<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin-top:30px;">
-<img src="cliente1.jpg" width="120">
-<img src="cliente2.png" width="120">
-<img src="cliente3.png" width="120">
-<img src="cliente4.png" width="120">
+<section class="clientes" id="clientes">
+<h2>Clientes</h2>
+<div class="logos">
+<img src="cliente1.jpg">
+<img src="cliente2.png">
+<img src="cliente3.png">
 </div>
 </section>
 
-<!-- UBICACION -->
-<section style="padding:80px 40px;text-align:center;background:#020617;">
+<section class="location">
 <h2>Ubicación</h2>
-<p>Av. México-Japón 412, Celaya, Guanajuato</p>
+<p>Celaya, Guanajuato</p>
 </section>
 
-<!-- GALERIA -->
-<div id="galeria">
-<span class="cerrar" onclick="cerrarGaleria()">✖</span>
-<div id="imagenes"></div>
-</div>
+<div id="galeria"><div id="imagenes"></div></div>
 
-<script>
-function abrirGaleria(servicio){
-let c=document.getElementById("imagenes");
-
-if(servicio==="diseno"){
-c.innerHTML=`<img src="transportador-cadena.jpg"><img src="transportador.jpeg"><img src="herramental-soldadura.jpg">`;}
-
-if(servicio==="instalaciones"){
-c.innerHTML=`<img src="transportador.jpeg"><img src="transportador-cadena.jpg">`;}
-
-if(servicio==="herramentales"){
-c.innerHTML=`<img src="herramental-soldadura.jpg">`;}
-
-if(servicio==="mantenimiento"){
-c.innerHTML=`<img src="transportador.jpeg">`;}
-
-if(servicio==="robots"){
-c.innerHTML=`<img src="transportador-cadena.jpg">`;}
-
-if(servicio==="ensamble"){
-c.innerHTML=`<img src="transportador.jpeg">`;}
-
-document.getElementById("galeria").style.display="flex";
-}
-
-function cerrarGaleria(){
-document.getElementById("galeria").style.display="none";
-}
-
-/* ANIMACIÓN SCROLL */
-const faders=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-faders.forEach(el=>{
-const rect=el.getBoundingClientRect();
-if(rect.top<window.innerHeight-100){el.classList.add('visible');}
-});
-});
-</script>
-
-<!-- WHATSAPP PRO -->
 <div class="wa-container">
-    <div class="wa-options" id="waOptions">
-        <a href="https://wa.me/5214613766633?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" target="_blank">📞 Ventas</a>
-        <a href="https://wa.me/5214331111971?text=Hola,%20quiero%20cotizar%20un%20proyecto" target="_blank">🛠 Cotización</a>
-    </div>
-    <div class="wa-button" onclick="toggleWA()">
-        <i class="fab fa-whatsapp"></i>
-    </div>
+<div class="wa-options" id="waOptions">
+<a href="https://wa.me/5214613766633">Ventas</a>
+<a href="https://wa.me/5214331111971">Cotización</a>
+</div>
+<div class="wa-button" onclick="toggleWA()"><i class="fab fa-whatsapp"></i></div>
 </div>
 
 <script>
-function toggleWA(){
-    document.getElementById("waOptions").classList.toggle("active");
-}
+function abrirGaleria(){document.getElementById('galeria').style.display='flex';}
+function toggleWA(){let x=document.getElementById('waOptions');x.style.display=x.style.display==='flex'?'none':'flex';}
 </script>
 
 </body>
