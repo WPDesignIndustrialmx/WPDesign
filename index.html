@@ -10,8 +10,6 @@
 <meta name="keywords" content="WP Design, automatización industrial, diseño mecánico, proyectos industriales, herramentales, mantenimiento industrial">
 <meta name="robots" content="index, follow">
 
-<!-- ICONOS -->
-
 <script src="https://kit.fontawesome.com/a2d9d6a64b.js" crossorigin="anonymous"></script>
 
 <style>
@@ -35,7 +33,7 @@ display:flex;
 align-items:center;
 }
 
-/* 🔥 NUEVA LINEA ANIMADA PRO */
+/* 🔥 LINEA ANIMADA BASE */
 nav div a{
 color:white;
 margin:0 20px;
@@ -60,6 +58,19 @@ nav div a:hover::after{
 width:100%;
 }
 
+/* 🔥 MEJORA VISUAL */
+nav div a::after{
+height:3px;
+background:linear-gradient(90deg,#25D366,#00ffcc);
+box-shadow:0 0 10px #25D366, 0 0 20px #25D366;
+border-radius:2px;
+}
+
+nav div a:hover{
+color:#25D366;
+transition:0.3s;
+}
+
 /* LOGO */
 .logo{
 height:55px;
@@ -76,7 +87,6 @@ width:auto;
 .card:hover,.about-card:hover,.project-item:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.6);} 
 .card i{font-size:35px;margin-bottom:10px;display:block;}
 
-/* 🔥 NUEVO ESTILO */
 .card p{
 font-size:14px;
 opacity:0.8;
@@ -118,7 +128,7 @@ line-height:1.4;
 
 <nav>
 <a href="#">
-  <img src="logo.png" alt="WP Design" class="logo">
+<img src="logo.png" alt="WP Design" class="logo">
 </a>
 
 <div>
@@ -139,10 +149,7 @@ line-height:1.4;
 </div>
 </section>
 
-<!-- 🔥 SERVICIOS MEJORADOS -->
-
 <section class="services fade" id="servicios">
-
 <h2 style="grid-column:1/-1;text-align:center;">Nuestros Servicios</h2>
 
 <div class="card">
@@ -197,9 +204,10 @@ line-height:1.4;
 <p>Somos una empresa comprometida con la satisfacción del cliente basado en la confianza, la entrega, la congruencia y la empatía.
 Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos.
 Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y plástico.</p>
+
 <div class="about-grid">
-<div class="about-card"><h3>Misión</h3><p>Somos una empresa líder en diseño mecánico, integración e innovación en maquinaría y herramentales, siendo adaptables a las nuevas tecnologías del futuro que nos conviertan en un elemento esencial para nuestros clientes.</p></div>
-<div class="about-card"><h3>Visión</h3><p>Ser comprometidos con la calidad del servicio, responsables con la satisfacción del cliente adaptándonos a las exigencias de sus productos y procesos, siendo una empresa con la filosofía de la integracion y el reconocimiento de las aportaciones de nuestros colaboradores.</p></div>
+<div class="about-card"><h3>Misión</h3><p>Somos una empresa líder en diseño mecánico, integración e innovación en maquinaría y herramentales...</p></div>
+<div class="about-card"><h3>Visión</h3><p>Ser comprometidos con la calidad del servicio...</p></div>
 <div class="about-card"><h3>Valores</h3><p>Honestidad<br>Calidad<br>Innovación<br>Responsabilidad<br>Compromiso<br>Lealtad<br>Excelencia<br>Profesionalismo</p></div>
 </div>
 </section>
@@ -207,7 +215,8 @@ Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y 
 <section class="clientes fade" id="clientes">
 <h2>Clientes</h2>
 <div class="logos">
-<img src="cliente1.jpg"><img src="cliente2.png"><img src="cliente3.png"><img src="cliente4.png"><img src="cliente5.jpg"><img src="cliente6.webp"><img src="cliente7.webp">
+<img src="cliente1.jpg"><img src="cliente2.png"><img src="cliente3.png">
+<img src="cliente4.png"><img src="cliente5.jpg"><img src="cliente6.webp"><img src="cliente7.webp">
 </div>
 </section>
 
@@ -216,19 +225,12 @@ Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y 
 <p>Celaya, Guanajuato</p>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" target="_blank">💬</a>
-
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola,%20quiero%20cotizar%20un%20proyecto" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" target="_blank">💬</a> <a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola,%20quiero%20cotizar%20un%20proyecto" target="_blank">💬</a>
 
 <div class="wa-container">
 <div class="wa-options" id="waOptions">
-<a href="https://wa.me/5214613766633?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" target="_blank">
-📞 Ventas
-</a>
-
-<a href="https://wa.me/5214331111971?text=Hola,%20quiero%20cotizar%20un%20proyecto" target="_blank">
-🛠 Cotización
-</a>
+<a href="https://wa.me/5214613766633?text=Hola,%20quiero%20información%20sobre%20sus%20servicios" target="_blank">📞 Ventas</a>
+<a href="https://wa.me/5214331111971?text=Hola,%20quiero%20cotizar%20un%20proyecto" target="_blank">🛠 Cotización</a>
 </div>
 <div class="wa-button" onclick="toggleWA()"><i class="fab fa-whatsapp"></i></div>
 </div>
