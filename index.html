@@ -8,6 +8,10 @@
 <meta name="description" content="WP Design ofrece soluciones en automatización industrial, diseño mecánico e integración de procesos.">
 
 <style>
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin:0;
     font-family:Arial, sans-serif;
@@ -47,6 +51,10 @@ nav div a::after{
 
 nav div a:hover::after{
     width:100%;
+}
+
+nav div a.active{
+    color:#25D366;
 }
 
 .logo{
@@ -231,7 +239,7 @@ footer{
 <nav>
 <img src="logo.png" class="logo">
 <div>
-<a href="#">Inicio</a>
+<a href="#" class="active">Inicio</a>
 <a href="#nosotros">Nosotros</a>
 <a href="#servicios">Servicios</a>
 <a href="#proyectos">Proyectos</a>
@@ -275,38 +283,23 @@ footer{
 <!-- ABOUT -->
 <section class="about" id="nosotros">
 <h2>Nosotros</h2>
-<p>Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos a través de un equipo de colaboradores apasionados y comprometidos con su trabajo.
-Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de materiales para la industria, utilizamos materiales de la mejor calidad y procesos realizados por personal altamente capacitado, atendemos a clientes en cualquier parte de mundo.</p>
+<p>Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos a través de un equipo de colaboradores apasionados y comprometidos con su trabajo.</p>
 
 <div class="about-grid">
 
 <div class="about-card">
 <h3>🎯 Misión</h3>
-<p>
-Desarrollar soluciones de automatización industrial mediante diseño, fabricación e integración de sistemas, optimizando los procesos productivos de nuestros clientes con calidad, innovación y eficiencia.
-</p>
+<p>Desarrollar soluciones de automatización industrial mediante diseño, fabricación e integración de sistemas.</p>
 </div>
 
 <div class="about-card">
 <h3>🚀 Visión</h3>
-<p>
-Ser una empresa líder en ingeniería y automatización industrial a nivel nacional, reconocida por la calidad de nuestros proyectos, innovación tecnológica y compromiso con nuestros clientes.
-</p>
+<p>Ser líderes en ingeniería y automatización industrial a nivel nacional.</p>
 </div>
 
 <div class="about-card">
 <h3>💼 Valores</h3>
-<p>
-✔ Honestidad<br>
-✔ Calidad<br>
-✔ Innovación<br>
-✔ Responsabilidad<br>
-✔ Compromiso<br>
-✔ Profesionalismo<br>
-✔ Entrega en tiempo y forma<br>  
-✔ Soluciones a la medida <br>
-✔ Atención personalizada  
-</p>
+<p>Calidad, innovación, compromiso.</p>
 </div>
 
 </div>
@@ -315,10 +308,24 @@ Ser una empresa líder en ingeniería y automatización industrial a nivel nacio
 <!-- PROYECTOS -->
 <section class="projects" id="proyectos">
 <h2>Proyectos</h2>
+
 <div class="projects-grid">
-<img src=transportador-cadena.jpg">
+
+<div class="card">
+<img src="transportador-cadena.jpg">
+<p>Transportador de cadena</p>
+</div>
+
+<div class="card">
 <img src="transportador.jpeg">
+<p>Transportador industrial</p>
+</div>
+
+<div class="card">
 <img src="herramental-soldadura.jpg">
+<p>Herramental de soldadura</p>
+</div>
+
 </div>
 </section>
 
@@ -329,19 +336,15 @@ Ser una empresa líder en ingeniería y automatización industrial a nivel nacio
 <img src="cliente1.jpg">
 <img src="cliente2.png">
 <img src="cliente3.png">
-<img src="cliente4.png">
-<img src="cliente5.jpg">
-<img src="cliente6.webp">
-<img src="cliente7.webp">
 </div>
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios." target="_blank">
+<a class="whatsapp" href="https://wa.me/5214613766633" target="_blank">
 💬 <span>Información</span>
 </a>
 
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20automatización." target="_blank">
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971" target="_blank">
 💰 <span>Cotizar</span>
 </a>
 
@@ -351,9 +354,19 @@ Ser una empresa líder en ingeniería y automatización industrial a nivel nacio
 </footer>
 
 <script>
+// NAVBAR SCROLL
 window.addEventListener("scroll", function(){
 document.querySelector("nav").style.background =
 window.scrollY > 50 ? "rgba(0,0,0,0.95)" : "rgba(0,0,0,0.8)";
+});
+
+// LINK ACTIVO
+const links = document.querySelectorAll("nav a");
+links.forEach(link => {
+  link.addEventListener("click", function(){
+    links.forEach(l => l.classList.remove("active"));
+    this.classList.add("active");
+  });
 });
 </script>
 
