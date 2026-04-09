@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WP Design | Diseño, integracion, e implementación en procesos de ensamble</title>
-<meta name="description" content="WP Design ofrece soluciones integrales en diseño mecánico, automatización industrial y procesos productivos.">
-<meta name="keywords" content="WP Design, automatización industrial, diseño mecánico, proyectos industriales, herramentales, mantenimiento industrial">
-<meta name="robots" content="index, follow">
+
+<title>WP Design | Automatización Industrial</title>
+<meta name="description" content="WP Design ofrece soluciones en automatización industrial, diseño mecánico e integración de procesos.">
 
 <style>
 body{
@@ -26,16 +25,6 @@ nav{
     position:fixed;
     width:100%;
     z-index:1000;
-}
-
-nav h2{
-    margin-right:40px;
-}
-
-nav div{
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 
 nav div a{
@@ -60,11 +49,9 @@ nav div a:hover::after{
     width:100%;
 }
 
-/* LOGO AGREGADO */
 .logo{
     height:50px;
-    width:auto;
-    margin-right:15px;
+    margin-right:20px;
 }
 
 /* HERO */
@@ -75,13 +62,10 @@ nav div a:hover::after{
     justify-content:center;
     align-items:center;
     text-align:center;
-    overflow:hidden;
 }
 
 #videoHero{
     position:absolute;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     object-fit:cover;
@@ -91,7 +75,6 @@ nav div a:hover::after{
 
 .hero-content{
     z-index:1;
-    animation:fadeIn 2s ease-in;
 }
 
 .hero h1{
@@ -101,13 +84,47 @@ nav div a:hover::after{
 .hero p{
     font-size:20px;
     max-width:700px;
-    margin-top:15px;
+    margin:auto;
 }
 
-/* JUSTIFICAR TEXTOS */
-p {
-    text-align: justify;
-    text-justify: inter-word;
+/* BOTONES */
+.btn{
+    background:#25D366;
+    padding:12px 25px;
+    margin:10px;
+    text-decoration:none;
+    color:white;
+    border-radius:5px;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1ebe5d;
+}
+
+.btn2{
+    background:transparent;
+    border:1px solid white;
+}
+
+/* SECCIONES */
+.services{
+    padding:80px 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
 }
 
 /* ABOUT */
@@ -117,54 +134,23 @@ p {
     text-align:center;
 }
 
-.about h2{
-    font-size:35px;
-    margin-bottom:20px;
-}
-
-.about p{
-    max-width:800px;
-    margin:auto;
-    margin-bottom:40px;
-}
-
 .about-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
     gap:20px;
 }
 
-/* CARDS PROFESIONALES */
-.card, .about-card, .project-item {
-    background:#1e293b;
-    padding:25px;
-    border-radius:10px;
-    text-align:justify;
-    text-justify: inter-word;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:hover, .about-card:hover, .project-item:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-}
-
 .about-card{
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* SERVICES */
-.services{
-    padding:80px 40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-    gap:25px;
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
 }
 
 /* PROJECTS */
 .projects{
     padding:80px 40px;
     background:#020617;
+    text-align:center;
 }
 
 .projects-grid{
@@ -181,13 +167,7 @@ p {
 /* CLIENTES */
 .clientes{
     padding:80px 40px;
-    background:#0b1120;
     text-align:center;
-}
-
-.clientes h2{
-    font-size:35px;
-    margin-bottom:40px;
 }
 
 .logos{
@@ -202,51 +182,37 @@ p {
     background:white;
     padding:10px;
     border-radius:10px;
-    filter:grayscale(100%);
-    opacity:0.7;
-    transition:0.3s;
-}
-
-.logos img:hover{
-    filter:grayscale(0%);
-    opacity:1;
-    transform:scale(1.1);
-}
-
-/* LOCATION */
-.location{
-    padding:80px 40px;
-    text-align:center;
 }
 
 /* WHATSAPP */
 .whatsapp{
     position:fixed;
-    bottom:20px;
     right:20px;
     background:#25D366;
-    padding:12px 20px;
+    padding:12px 15px;
     border-radius:50px;
-    max-width:60px;
-    overflow:hidden;
-    transition:0.3s;
     display:flex;
     align-items:center;
-    justify-content:center;
+    transition:0.3s;
+    overflow:hidden;
+    bottom:20px;
 }
-.whatsapp:hover{
-    max-width:200px;
-}
+
 .whatsapp span{
     display:none;
-    margin-left:10px;
-    font-weight:bold;
+    margin-left:8px;
 }
+
+.whatsapp:hover{
+    padding:12px 20px;
+}
+
 .whatsapp:hover span{
     display:inline;
 }
+
 .whatsapp2{
-    right:150px;
+    bottom:90px;
     background:#128C7E;
 }
 
@@ -261,104 +227,101 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
-<img src="logo.png" alt="WP Design" class="logo">
-
+<img src="logo.png" class="logo">
 <div>
 <a href="#">Inicio</a>
 <a href="#servicios">Servicios</a>
 <a href="#proyectos">Proyectos</a>
-<a href="#clientes">Nuestros Clientes</a>
-<a href="#ubicacion">Ubicación</a>
+<a href="#clientes">Clientes</a>
 </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<video autoplay muted loop id="videoHero" poster="poster.jpg">
+<video autoplay muted loop id="videoHero">
 <source src="video.mp4" type="video/mp4">
 </video>
 
 <div class="hero-content">
-<h1>WP Design - Ingeniería y Automatización Industrial</h1>
-<p>Soluciones integrales en diseño mecánico, automatización y procesos industriales.</p>
+<h1>WP Design - Automatización Industrial</h1>
+<p>Diseñamos, fabricamos e integramos soluciones industriales para optimizar tus procesos.</p>
+
+<a href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios." class="btn">Información</a>
+<a href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20automatización." class="btn btn2">Cotizar</a>
 </div>
 </section>
 
+<!-- SERVICIOS -->
 <section class="services" id="servicios">
-<div class="card"><h3>Diseño Mecánico y Maquinados</h3></div>
-<div class="card"><h3>Instalaciones Eléctricas y Neumáticas</h3></div>
-<div class="card"><h3>Fabricación De Herramentales para Soldadoras De Vibración</h3></div>
-<div class="card"><h3>Mantenimiento Industrial</h3></div>
-<div class="card"><h3>Implementación, Puesta En Marcha & Set-Up Para Soldadoras De Vibración</h3></div>
-<div class="card"><h3>Diseño De Fixtures y Estaciones Para Procesos De Ensamble</h3></div>
-<div class="card"><h3>Programación de Robots</h3></div>
-<div class="card"><h3>Programación y Puesta En Marcha De Estaciones De Ensamble</h3></div>
-<div class="card"><h3>Armado De Tableros Electronicos</h3></div>
+<div class="card">Diseño Mecánico</div>
+<div class="card">Automatización</div>
+<div class="card">Fabricación</div>
+<div class="card">Mantenimiento</div>
 </section>
 
+<!-- PRODUCTOS -->
+<section class="services">
+<div class="card">Transportadores de Banda</div>
+<div class="card">Rodillos</div>
+<div class="card">Elevadores</div>
+<div class="card">Líneas de Ensamble</div>
+<div class="card">Sistemas Automatizados</div>
+<div class="card">Proyectos Especiales</div>
+</section>
+
+<!-- ABOUT -->
 <section class="about">
 <h2>Quiénes Somos</h2>
-<p>Somos una empresa comprometida con la satisfacción del cliente basado en la confianza, la entrega, la congruencia y la empatía.
-Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos.
-Contamos con experiencia en sector metal-mecánico, automotriz, farmacéutico y plástico.</p>
+<p>Empresa especializada en automatización industrial y procesos productivos.</p>
 
 <div class="about-grid">
-<div class="about-card"><h3>Misión</h3><p>Somos una empresa líder en diseño mecánico, integración e innovación en maquinaría y herramentales, siendo adaptables a las nuevas tecnologías del futuro que nos conviertan en un elemento esencial para nuestros clientes.</p></div>
-<div class="about-card"><h3>Visión</h3><p>Ser comprometidos con la calidad del servicio, responsables con la satisfacción del cliente adaptándonos a las exigencias de sus productos y procesos, siendo una empresa con la filosofía de la integracion y el reconocimiento de las aportaciones de nuestros colaboradores.</p></div>
-<div class="about-card"><h3>Valores</h3><p>Honestidad<br>Calidad<br>Innovación<br>Responsabilidad<br>Compromiso<br>Lealtad<br>Excelencia<br>Profesionalismo</p></div>
+<div class="about-card">Innovación</div>
+<div class="about-card">Calidad</div>
+<div class="about-card">Compromiso</div>
 </div>
 </section>
 
+<!-- PROYECTOS -->
 <section class="projects" id="proyectos">
 <h2>Proyectos</h2>
 <div class="projects-grid">
-
-  <div class="project-item">
-    <img src="transportador-cadena.jpg" alt="Transportador de cadena">
-    <h3>Transportador de cadena</h3>
-    <p>Optimización para mejorar estabilidad y evitar fallas en operación.</p>
-  </div>
-
-  <div class="project-item">
-    <img src="herramental-soldadura.jpg" alt="Herramental de soldadura">
-    <h3>Herramental de soldadura</h3>
-    <p>Diseño y fabricación de fixture para mejorar precisión en ensamble.</p>
-  </div>
-
-  <div class="project-item">
-    <img src="transportador.jpeg" alt="Transportador">
-    <h3>Transportador</h3>
-    <p>Rediseño mecánico para lograr flujo continuo y operación eficiente.</p>
-  </div>
+<img src="proyecto1.jpg">
+<img src="proyecto2.jpg">
+<img src="proyecto3.jpg">
 </div>
 </section>
 
+<!-- CLIENTES -->
 <section class="clientes" id="clientes">
-<h2>Nuestros Clientes</h2>
+<h2>Clientes</h2>
 <div class="logos">
-<img src="cliente1.jpg" alt="Logo Cliente 1">
-<img src="cliente2.png" alt="Logo Cliente 2">
-<img src="cliente3.png" alt="Logo Cliente 3">
-<img src="cliente4.png" alt="Logo Cliente 4">
-<img src="cliente5.jpg" alt="Logo Cliente 5">
-<img src="cliente6.webp" alt="Logo Cliente 6">
-<img src="cliente7.webp" alt="Logo Cliente 7">
+<img src="cliente1.png">
+<img src="cliente2.png">
 </div>
 </section>
 
-<section class="location" id="ubicacion">
-<h2>Ubicación</h2>
-<p>Av. México-Japón 412, Emiliano Zapata,<br>
-    Celaya, Guanajuato</p>
-</section>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios." target="_blank">
+💬 <span>Información</span>
+</a>
 
-<!-- WhatsApp -->
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20automatizaci%C3%B3n%20industrial." target="_blank">💬</a>
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20ingenier%C3%ADa%20industrial." target="_blank">💬</a>
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20automatización." target="_blank">
+💰 <span>Cotizar</span>
+</a>
 
+<!-- FOOTER -->
 <footer>
-<p>© 2024 WP Design</p>
+<p>© 2026 WP Design</p>
 </footer>
+
+<script>
+window.addEventListener("scroll", function(){
+document.querySelector("nav").style.background =
+window.scrollY > 50 ? "rgba(0,0,0,0.95)" : "rgba(0,0,0,0.8)";
+});
+</script>
 
 </body>
 </html>
