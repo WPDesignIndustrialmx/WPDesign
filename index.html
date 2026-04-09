@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>WP Design | Automatización Industrial</title>
-<meta name="description" content="WP Design ofrece soluciones en automatización industrial, diseño mecánico e integración de procesos.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -22,28 +23,38 @@ body{
 /* NAV */
 nav{
     display:flex;
-    justify-content:center;
     align-items:center;
-    padding:20px 40px;
-    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    padding:15px 40px;
+    background:black;
     position:fixed;
     width:100%;
     z-index:1000;
 }
 
-nav div{
+/* LOGO IZQUIERDA */
+.logo{
+    position:absolute;
+    left:30px;
+    height:45px;
+}
+
+/* MENU CENTRADO */
+.menu{
     display:flex;
     align-items:center;
+    gap:25px;
 }
 
-nav div a{
+.menu a{
     color:white;
-    margin:0 15px;
     text-decoration:none;
     position:relative;
+    letter-spacing:0.5px;
 }
 
-nav div a::after{
+/* LINEA HOVER */
+.menu a::after{
     content:'';
     position:absolute;
     width:0;
@@ -54,17 +65,17 @@ nav div a::after{
     transition:0.3s;
 }
 
-nav div a:hover::after{
+.menu a:hover::after{
     width:100%;
 }
 
-nav div a.active{
-    color:#25D366;
-}
-
-.logo{
-    height:50px;
-    margin-right:20px;
+/* HAMBURGUESA DERECHA */
+.hamburger{
+    position:absolute;
+    right:30px;
+    display:none;
+    font-size:25px;
+    cursor:pointer;
 }
 
 /* DROPDOWN */
@@ -72,43 +83,74 @@ nav div a.active{
     position:relative;
 }
 
-.dropdown > a{
-    color:#facc15;
-    font-weight:bold;
+.dropdown-toggle{
+    cursor:pointer;
 }
 
-.dropdown-menu{
+.dropdown-toggle i{
+    margin-left:5px;
+    transition:0.3s;
+}
+
+.dropdown.active .dropdown-toggle i{
+    transform:rotate(180deg);
+}
+
+/* MEGA MENU */
+.mega-menu{
     position:absolute;
-    top:40px;
+    top:55px;
     left:0;
+    width:700px;
     background:#0a0a0a;
-    width:260px;
-    padding:10px 0;
-    display:none;
+    padding:25px;
+    display:flex;
+    gap:40px;
+    border-radius:10px;
+    border-top:3px solid #25D366;
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+
+    opacity:0;
+    transform:translateY(10px);
+    pointer-events:none;
+    transition:0.3s;
+}
+
+.dropdown.active .mega-menu{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+/* COLUMNAS */
+.mega-column{
+    display:flex;
     flex-direction:column;
-    border-top:3px solid #facc15;
 }
 
-.dropdown-menu a{
+.mega-column h4{
+    color:#25D366;
+    margin-bottom:10px;
+}
+
+.mega-column a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:6px 0;
     color:white;
-    padding:12px 20px;
     text-decoration:none;
-    display:flex;
-    justify-content:space-between;
+    transition:0.3s;
 }
 
-.dropdown-menu a::after{
-    content:"›";
-    color:#999;
+.mega-column a:hover{
+    color:#25D366;
+    transform:translateX(5px);
 }
 
-.dropdown-menu a:hover{
-    background:#111;
-    padding-left:25px;
-}
-
-.dropdown:hover .dropdown-menu{
-    display:flex;
+.mega-column i{
+    color:#25D366;
+    width:20px;
 }
 
 /* HERO */
@@ -130,75 +172,38 @@ nav div a.active{
     filter:brightness(50%);
 }
 
-.hero-content{
-    z-index:1;
-}
-
-.hero h1{
-    font-size:55px;
-}
-
-/* BOTONES */
-.btn{
-    background:#25D366;
-    padding:12px 25px;
-    margin:10px;
-    text-decoration:none;
-    color:white;
-    border-radius:5px;
-}
-
 /* SECCIONES */
-.services{
+.about, .projects, .clientes{
     padding:80px 40px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-    gap:25px;
+    text-align:center;
 }
 
-.card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:10px;
-}
-
-/* ABOUT */
 .about{
-    padding:80px 40px;
     background:#0f172a;
-    text-align:center;
 }
 
-.about-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-/* PROJECTS */
 .projects{
-    padding:80px 40px;
     background:#020617;
-    text-align:center;
 }
 
 .projects-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:20px;
 }
 
-.projects img{
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+}
+
+.card img{
     width:100%;
     border-radius:10px;
 }
 
 /* CLIENTES */
-.clientes{
-    padding:80px 40px;
-    text-align:center;
-}
-
 .logos{
     display:flex;
     flex-wrap:wrap;
@@ -234,6 +239,34 @@ footer{
     padding:20px;
     background:#020617;
 }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.menu{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:black;
+    flex-direction:column;
+    display:none;
+}
+
+.menu.active{
+    display:flex;
+}
+
+.hamburger{
+    display:block;
+}
+
+.mega-menu{
+    position:static;
+    width:100%;
+    flex-direction:column;
+}
+}
 </style>
 </head>
 
@@ -243,29 +276,50 @@ footer{
 <nav>
 <img src="logo.png" class="logo">
 
-<div>
-<a href="#" class="active">Inicio</a>
+<div class="hamburger" id="hamburger">☰</div>
+
+<div class="menu" id="menu">
+
+<a href="#">Inicio</a>
 <a href="#nosotros">Nosotros</a>
 
-<div class="dropdown">
-<a href="#">PRODUCTOS Y SERVICIOS ▾</a>
-<div class="dropdown-menu">
-<a href="#">Diseño mecanico</a
-<a href="#">Mantenimiento</a>
-<a href="#">Programación de robots</a>
-<a href="#">Transportadores de cadena</a>
-<a href="#">Transportadores de rodillo</a>
-<a href="#">Transportadores de banda</a>
-<a href="#">Transportadores aéreos</a>
-<a href="#">Transportadores telescópicos</a>
-<a href="#">Maquinados</a>
-<a href="#">Scrap conveyor</a>
-<a href="#">Gabinetes electronicos</a>
+<div class="dropdown" id="dropdown">
+
+<div class="dropdown-toggle">
+Productos y servicios <i class="fa-solid fa-chevron-down"></i>
+</div>
+
+<div class="mega-menu">
+
+<div class="mega-column">
+<h4>Ingeniería</h4>
+<a href="#"><i class="fa-solid fa-gear"></i>Diseño mecánico</a>
+<a href="#"><i class="fa-solid fa-screwdriver-wrench"></i>Mantenimiento</a>
+<a href="#"><i class="fa-solid fa-robot"></i>Programación de robots</a>
+</div>
+
+<div class="mega-column">
+<h4>Transportadores</h4>
+<a href="#"><i class="fa-solid fa-link"></i>Cadena</a>
+<a href="#"><i class="fa-solid fa-circle-dot"></i>Rodillo</a>
+<a href="#"><i class="fa-solid fa-wave-square"></i>Banda</a>
+<a href="#"><i class="fa-solid fa-plane"></i>Aéreos</a>
+<a href="#"><i class="fa-solid fa-arrows-left-right"></i>Telescópicos</a>
+</div>
+
+<div class="mega-column">
+<h4>Fabricación</h4>
+<a href="#"><i class="fa-solid fa-industry"></i>Maquinados</a>
+<a href="#"><i class="fa-solid fa-recycle"></i>Scrap conveyor</a>
+<a href="#"><i class="fa-solid fa-bolt"></i>Gabinetes electrónicos</a>
+</div>
+
 </div>
 </div>
 
 <a href="#proyectos">Proyectos</a>
 <a href="#clientes">Clientes</a>
+
 </div>
 </nav>
 
@@ -275,17 +329,17 @@ footer{
 <source src="video.mp4" type="video/mp4">
 </video>
 
-<div class="hero-content">
+<div>
 <h1>WP Design - Automatización Industrial</h1>
 <p>Soluciones industriales para optimizar tus procesos.</p>
 </div>
 </section>
 
-<!-- NOSOTROS -->
+<!-- ABOUT -->
 <section class="about" id="nosotros">
 <h2>Nosotros</h2>
 <p>Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos a través de un equipo de colaboradores apasionados y comprometidos con su trabajo.
-Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de materiales para la industria, utilizamos materiales de la mejor calidad y procesos realizados por personal altamente capacitado, atendemos a clientes en cualquier parte de mundo.</p></p>
+Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de materiales para la industria, utilizamos materiales de la mejor calidad y procesos realizados por personal altamente capacitado, atendemos a clientes en cualquier parte de mundo.</p>
 
 <div class="about-grid">
 
@@ -317,7 +371,6 @@ Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de
 </div>
 </section>
 
-
 <!-- PROYECTOS -->
 <section class="projects" id="proyectos">
 <h2>Proyectos</h2>
@@ -343,6 +396,7 @@ Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de
 <!-- CLIENTES -->
 <section class="clientes" id="clientes">
 <h2>Clientes</h2>
+
 <div class="logos">
 <img src="cliente1.jpg">
 <img src="cliente2.png">
@@ -363,10 +417,33 @@ Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de
 💰 <span>Cotizar</span>
 </a>
 
-
 <footer>
-<p>© 2023 WP Design</p>
+<p>© 2026 WP Design</p>
 </footer>
+
+<script>
+// DROPDOWN CLICK
+const dropdown = document.getElementById("dropdown");
+
+dropdown.querySelector(".dropdown-toggle").addEventListener("click", function(){
+    dropdown.classList.toggle("active");
+});
+
+// CERRAR AL HACER CLICK FUERA
+document.addEventListener("click", function(e){
+    if(!dropdown.contains(e.target)){
+        dropdown.classList.remove("active");
+    }
+});
+
+// MENU MOVIL
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", ()=>{
+    menu.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>
