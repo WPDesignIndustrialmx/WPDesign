@@ -31,6 +31,11 @@ nav{
     z-index:1000;
 }
 
+nav div{
+    display:flex;
+    align-items:center;
+}
+
 nav div a{
     color:white;
     margin:0 15px;
@@ -62,6 +67,50 @@ nav div a.active{
     margin-right:20px;
 }
 
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+.dropdown > a{
+    color:#facc15;
+    font-weight:bold;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:40px;
+    left:0;
+    background:#0a0a0a;
+    width:260px;
+    padding:10px 0;
+    display:none;
+    flex-direction:column;
+    border-top:3px solid #facc15;
+}
+
+.dropdown-menu a{
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    display:flex;
+    justify-content:space-between;
+}
+
+.dropdown-menu a::after{
+    content:"›";
+    color:#999;
+}
+
+.dropdown-menu a:hover{
+    background:#111;
+    padding-left:25px;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:flex;
+}
+
 /* HERO */
 .hero{
     position:relative;
@@ -89,12 +138,6 @@ nav div a.active{
     font-size:55px;
 }
 
-.hero p{
-    font-size:20px;
-    max-width:700px;
-    margin:auto;
-}
-
 /* BOTONES */
 .btn{
     background:#25D366;
@@ -103,17 +146,6 @@ nav div a.active{
     text-decoration:none;
     color:white;
     border-radius:5px;
-    display:inline-block;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#1ebe5d;
-}
-
-.btn2{
-    background:transparent;
-    border:1px solid white;
 }
 
 /* SECCIONES */
@@ -128,11 +160,6 @@ nav div a.active{
     background:#1e293b;
     padding:25px;
     border-radius:10px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
 }
 
 /* ABOUT */
@@ -146,12 +173,6 @@ nav div a.active{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
     gap:20px;
-}
-
-.about-card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
 }
 
 /* PROJECTS */
@@ -180,9 +201,9 @@ nav div a.active{
 
 .logos{
     display:flex;
-    justify-content:center;
     flex-wrap:wrap;
     gap:40px;
+    justify-content:center;
 }
 
 .logos img{
@@ -192,31 +213,14 @@ nav div a.active{
     border-radius:10px;
 }
 
-/* WHATSAPP */
+/* WHATS */
 .whatsapp{
     position:fixed;
     right:20px;
+    bottom:20px;
     background:#25D366;
     padding:12px 15px;
     border-radius:50px;
-    display:flex;
-    align-items:center;
-    transition:0.3s;
-    overflow:hidden;
-    bottom:20px;
-}
-
-.whatsapp span{
-    display:none;
-    margin-left:8px;
-}
-
-.whatsapp:hover{
-    padding:12px 20px;
-}
-
-.whatsapp:hover span{
-    display:inline;
 }
 
 .whatsapp2{
@@ -238,10 +242,28 @@ footer{
 <!-- NAV -->
 <nav>
 <img src="logo.png" class="logo">
+
 <div>
 <a href="#" class="active">Inicio</a>
 <a href="#nosotros">Nosotros</a>
-<a href="#servicios">Servicios</a>
+
+<div class="dropdown">
+<a href="#">PRODUCTOS Y SERVICIOS ▾</a>
+<div class="dropdown-menu">
+<a href="#">Diseño mecanico</a
+<a href="#">Mantenimiento</a>
+<a href="#">Programación de robots</a>
+<a href="#">Transportadores de cadena</a>
+<a href="#">Transportadores de rodillo</a>
+<a href="#">Transportadores de banda</a>
+<a href="#">Transportadores aéreos</a>
+<a href="#">Transportadores telescópicos</a>
+<a href="#">Maquinados</a>
+<a href="#">Scrap conveyor</a>
+<a href="#">Gabinetes electronicos</a>
+</div>
+</div>
+
 <a href="#proyectos">Proyectos</a>
 <a href="#clientes">Clientes</a>
 </div>
@@ -255,36 +277,15 @@ footer{
 
 <div class="hero-content">
 <h1>WP Design - Automatización Industrial</h1>
-<p>Diseñamos, fabricamos e integramos soluciones industriales para optimizar tus procesos.</p>
-
-<a href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios." class="btn">Información</a>
-<a href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20automatización." class="btn btn2">Cotizar</a>
+<p>Soluciones industriales para optimizar tus procesos.</p>
 </div>
 </section>
 
-<!-- SERVICIOS -->
-<section class="services" id="servicios">
-<div class="card">Diseño Mecánico</div>
-<div class="card">Automatización</div>
-<div class="card">Fabricación</div>
-<div class="card">Mantenimiento</div>
-</section>
-
-<!-- PRODUCTOS -->
-<section class="services">
-<div class="card">Transportadores de Banda</div>
-<div class="card">Rodillos</div>
-<div class="card">Elevadores</div>
-<div class="card">Líneas de Ensamble</div>
-<div class="card">Sistemas Automatizados</div>
-<div class="card">Proyectos Especiales</div>
-</section>
-
-<!-- ABOUT -->
+<!-- NOSOTROS -->
 <section class="about" id="nosotros">
 <h2>Nosotros</h2>
 <p>Somos desarrolladores e impulsores de la mejora continua en los procesos que intervenimos a través de un equipo de colaboradores apasionados y comprometidos con su trabajo.
-Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de materiales para la industria, utilizamos materiales de la mejor calidad y procesos realizados por personal altamente capacitado, atendemos a clientes en cualquier parte de mundo.</p>
+Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de materiales para la industria, utilizamos materiales de la mejor calidad y procesos realizados por personal altamente capacitado, atendemos a clientes en cualquier parte de mundo.</p></p>
 
 <div class="about-grid">
 
@@ -316,12 +317,12 @@ Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de
 </div>
 </section>
 
+
 <!-- PROYECTOS -->
 <section class="projects" id="proyectos">
 <h2>Proyectos</h2>
 
 <div class="projects-grid">
-
 <div class="card">
 <img src="transportador-cadena.jpg">
 <p>Transportador de cadena</p>
@@ -336,7 +337,6 @@ Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de
 <img src="herramental-soldadura.jpg">
 <p>Herramental de soldadura</p>
 </div>
-
 </div>
 </section>
 
@@ -363,27 +363,10 @@ Nos dedicamos al diseño, fabricación e instalación de soluciones en manejo de
 💰 <span>Cotizar</span>
 </a>
 
-<!-- FOOTER -->
+
 <footer>
-<p>© 2026 WP Design</p>
+<p>© 2023 WP Design</p>
 </footer>
-
-<script>
-// NAVBAR SCROLL
-window.addEventListener("scroll", function(){
-document.querySelector("nav").style.background =
-window.scrollY > 50 ? "rgba(0,0,0,0.95)" : "rgba(0,0,0,0.8)";
-});
-
-// LINK ACTIVO
-const links = document.querySelectorAll("nav a");
-links.forEach(link => {
-  link.addEventListener("click", function(){
-    links.forEach(l => l.classList.remove("active"));
-    this.classList.add("active");
-  });
-});
-</script>
 
 </body>
 </html>
