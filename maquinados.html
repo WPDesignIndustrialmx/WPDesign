@@ -47,41 +47,25 @@ nav a{
     font-size:16px;
 }
 
-/* BANNER */
+/* BANNER SIN IMAGEN */
 .banner{
     height:80vh;
-    background:url('maquinados-pro.png') no-repeat center center;
-    background-size: cover;
+    background:#000; /* SOLO NEGRO */
 
     display:flex;
     align-items:center;
     justify-content:center;
-
-    position:relative;
-}
-
-/* OVERLAY DEL BANNER */
-.banner::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,0.65);
 }
 
 /* TEXTO PRINCIPAL */
 .banner h1{
-    position:relative;
-    z-index:2;
     font-size:60px;
     font-weight:700;
     letter-spacing:2px;
     text-align:center;
     text-transform:uppercase;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
 
     animation: fadeIn 1.5s ease;
 }
@@ -139,7 +123,7 @@ footer{
     background:rgba(0,0,0,0.9);
 }
 
-/* 📱 RESPONSIVE */
+/* RESPONSIVE */
 @media(max-width:768px){
     .contenido{
         grid-template-columns:1fr;
