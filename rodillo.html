@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transportadores de Rodillo</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0b1120;
+    color:white;
+}
+
+nav{
+    background:black;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+/* BANNER */
+.banner{
+    height:60vh;
+    background:url('rodillo-pro.jpg') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.banner::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.banner h1{
+    position:relative;
+    z-index:1;
+    font-size:42px;
+}
+
+/* CONTENIDO */
+.contenido{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:60px;
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+img:hover{
+    transform:scale(1.05);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">⬅ Volver</a>
+</nav>
+
+<section class="banner">
+<h1>TRANSPORTADORES DE RODILLO</h1>
+</section>
+
+<section class="contenido">
+
+<img src="transpoprtador-de-rodillo-pro.png">
+
+<div>
+<h2 style="color:#25D366;">Alta eficiencia</h2>
+<p>Movimiento fluido y continuo de materiales.</p>
+<p>Bajo mantenimiento.</p>
+<p>Ideal para líneas automatizadas.</p>
+
+<h3>Aplicaciones</h3>
+<p>Automotriz, logística, manufactura.</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 WP Design Industrial
+</footer>
+
+</body>
+</html>
