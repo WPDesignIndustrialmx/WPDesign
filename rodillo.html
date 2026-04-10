@@ -6,15 +6,29 @@
 <title>Transportadores de Rodillo</title>
 
 <style>
+
+/* FONDO GLOBAL */
 body{
     margin:0;
     font-family:Arial;
-    background:#0b1120;
     color:white;
+    background: url('fondo-industrial.jpeg') no-repeat center center fixed;
+    background-size: cover;
 }
 
+/* OVERLAY OSCURO */
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:-1;
+}
+
+/* NAV */
 nav{
-    background:black;
+    background:rgba(0,0,0,0.85);
     padding:15px;
     text-align:center;
 }
@@ -22,6 +36,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
+    font-weight:bold;
 }
 
 /* BANNER */
@@ -56,28 +71,43 @@ nav a{
     padding:60px;
 }
 
-img{
+/* TARJETAS */
+.card{
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    border-radius:12px;
+}
+
+/* IMÁGENES */
+.contenido img{
     width:100%;
     border-radius:10px;
     transition:0.3s;
 }
 
-img:hover{
+.contenido img:hover{
     transform:scale(1.05);
 }
 
+/* TEXTO */
+.texto h2{
+    color:#25D366;
+}
+
+/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
-    background:#020617;
+    background:rgba(0,0,0,0.85);
 }
+
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="index.html">⬅ Volver</a>
+<a href="index.html">⬅ Volver al inicio</a>
 </nav>
 
 <section class="banner">
@@ -86,10 +116,12 @@ footer{
 
 <section class="contenido">
 
+<div class="card">
 <img src="transportador-de-rodillo-pro.png">
+</div>
 
-<div>
-<h2 style="color:#25D366;">Alta eficiencia</h2>
+<div class="card texto">
+<h2>Alta eficiencia</h2>
 <p>Movimiento fluido y continuo de materiales.</p>
 <p>Bajo mantenimiento.</p>
 <p>Ideal para líneas automatizadas.</p>
