@@ -24,7 +24,7 @@ body::before{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.75);
+    background:rgba(0,0,0,0.55); /* ajustado para no oscurecer tanto */
     z-index:0;
 }
 
@@ -47,14 +47,22 @@ nav a{
     font-size:16px;
 }
 
-/* BANNER SIN IMAGEN */
+/* BANNER CON IMAGEN + EFECTO PROFESIONAL */
 .banner{
     height:80vh;
-    background:#000; /* SOLO NEGRO */
 
     display:flex;
     align-items:center;
     justify-content:center;
+    text-align:center;
+
+    background:
+        linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.3)),
+        url('fondo-industrial.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* TEXTO PRINCIPAL */
@@ -62,7 +70,6 @@ nav a{
     font-size:60px;
     font-weight:700;
     letter-spacing:2px;
-    text-align:center;
     text-transform:uppercase;
 
     text-shadow: 0 0 20px rgba(255,255,255,0.3);
@@ -182,4 +189,3 @@ footer{
 
 </body>
 </html>
-
