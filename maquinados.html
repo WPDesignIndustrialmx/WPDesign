@@ -16,7 +16,7 @@ body{
     background-size: cover;
 }
 
-/* OVERLAY GENERAL */
+/* OVERLAY GENERAL (BASE DEL EFECTO) */
 body::before{
     content:'';
     position:fixed;
@@ -47,7 +47,7 @@ nav a{
     font-size:16px;
 }
 
-/* BANNER SIN IMAGEN 🔥 */
+/* BANNER ESTILO CADENA 🔥 */
 .banner{
     height:80vh;
     display:flex;
@@ -55,8 +55,12 @@ nav a{
     justify-content:center;
     text-align:center;
 
-    /* FONDO OSCURO PRO */
-    background: linear-gradient(to right, #0a0a0a, #202020);
+    /* EFECTO PROFESIONAL */
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 /* TEXTO */
@@ -97,6 +101,7 @@ nav a{
 .card{
     background:rgba(0,0,0,0.55);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border:1px solid rgba(255,255,255,0.1);
     padding:25px;
     border-radius:12px;
@@ -180,7 +185,7 @@ footer{
 </section>
 
 <footer>
-© 2024 WP Design
+© 2026 WP Design
 </footer>
 
 </body>
