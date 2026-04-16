@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transportadores Aéreos</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    color:white;
+    background:url('fondo-industrial.jpeg') center/cover fixed;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:0;
+}
+
+body>*{
+    position:relative;
+    z-index:1;
+}
+
+nav{
+    background:rgba(0,0,0,0.9);
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.banner{
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0.7);
+}
+
+.banner h1{
+    font-size:55px;
+}
+
+.contenido{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:60px;
+}
+
+.card{
+    background:rgba(0,0,0,0.55);
+    padding:25px;
+    border-radius:12px;
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+.texto h2{
+    color:#38bdf8;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:black;
+}
+
+@media(max-width:768px){
+    .contenido{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">⬅ Volver</a>
+</nav>
+
+<section class="banner">
+<h1>Transportadores Aéreos</h1>
+</section>
+
+<section class="contenido">
+
+<div class="card">
+<img src="transportador-aereo.jpg">
+</div>
+
+<div class="card texto">
+<h2>Optimización de espacio</h2>
+<p>Sistemas elevados para transporte de materiales sin ocupar espacio en piso.</p>
+
+<h3>Servicios</h3>
+<p>✔ Diseño e ingeniería</p>
+<p>✔ Instalación completa</p>
+<p>✔ Integración a líneas existentes</p>
+
+<h3>Aplicaciones</h3>
+<p>Automotriz, pintura, ensamble y líneas de producción.</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 WP Design
+</footer>
+
+</body>
+</html>
