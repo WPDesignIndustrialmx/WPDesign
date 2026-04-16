@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programación de Robots</title>
+
+<style>
+
+/* RESET */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    color:white;
+    background: url('fondo-industrial.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* OVERLAY GENERAL */
+body::before{
+    content:'';
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:0;
+}
+
+body > *{
+    position:relative;
+    z-index:1;
+}
+
+/* NAV */
+nav{
+    background:rgba(0,0,0,0.9);
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* BANNER */
+.banner{
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background: rgba(0,0,0,0.7);
+}
+
+.banner h1{
+    font-size:60px;
+    text-transform:uppercase;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* CONTENIDO */
+.contenido{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:60px;
+}
+
+/* TARJETAS */
+.card{
+    background:rgba(0,0,0,0.55);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:12px;
+}
+
+/* IMÁGENES */
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* TEXTO */
+.texto h2{
+    color:#00c3ff; /* tono tecnológico */
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.9);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .contenido{
+        grid-template-columns:1fr;
+    }
+
+    .banner h1{
+        font-size:32px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">⬅ Volver al inicio</a>
+</nav>
+
+<section class="banner">
+<h1>Programación de Robots</h1>
+</section>
+
+<section class="contenido">
+
+<div class="card">
+<img src="robot-industrial.jpg">
+</div>
+
+<div class="card texto">
+<h2>Automatización inteligente</h2>
+<p>Programación y puesta en marcha de robots industriales.</p>
+<p>Optimización de ciclos de producción y reducción de errores.</p>
+<p>Integración con PLC, sensores y sistemas de automatización.</p>
+
+<h3>Servicios</h3>
+<p>✔ Programación offline y online</p>
+<p>✔ Integración con líneas de producción</p>
+<p>✔ Puesta en marcha (commissioning)</p>
+<p>✔ Optimización de ciclos</p>
+
+<h3>Aplicaciones</h3>
+<p>Soldadura, pick & place, ensamble, paletizado y automatización industrial.</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 WP Design
+</footer>
+
+</body>
+</html>
