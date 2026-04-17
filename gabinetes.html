@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabinetes Eléctricos</title>
+
+<style>
+
+/* RESET */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    color:white;
+    background: url('fondo-industrial.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* OVERLAY GENERAL */
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:0;
+}
+
+body > *{
+    position:relative;
+    z-index:1;
+}
+
+/* NAV */
+nav{
+    background:rgba(0,0,0,0.9);
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* BANNER */
+.banner{
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background: rgba(0,0,0,0.7);
+}
+
+.banner h1{
+    font-size:55px;
+    text-transform:uppercase;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* CONTENIDO */
+.contenido{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:60px;
+}
+
+/* TARJETAS */
+.card{
+    background:rgba(0,0,0,0.55);
+    padding:25px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+/* IMÁGENES */
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* TEXTO */
+.texto h2{
+    color:#facc15; /* tono eléctrico amarillo */
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:black;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .contenido{
+        grid-template-columns:1fr;
+    }
+
+    .banner h1{
+        font-size:32px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">⬅ Volver al inicio</a>
+</nav>
+
+<section class="banner">
+<h1>Gabinetes Eléctricos</h1>
+</section>
+
+<section class="contenido">
+
+<div class="card">
+<img src="gabinete-electrico.jpg">
+</div>
+
+<div class="card texto">
+<h2>Control y distribución eléctrica</h2>
+<p>Diseño y fabricación de gabinetes eléctricos para sistemas industriales.</p>
+<p>Integración de componentes eléctricos y electrónicos.</p>
+<p>Seguridad, orden y eficiencia en instalaciones.</p>
+
+<h3>Servicios</h3>
+<p>✔ Diseño de tableros eléctricos</p>
+<p>✔ Integración de PLC y control</p>
+<p>✔ Cableado y pruebas</p>
+<p>✔ Instalación en planta</p>
+
+<h3>Aplicaciones</h3>
+<p>Automatización industrial, maquinaria, líneas de producción y control eléctrico.</p>
+</div>
+
+</section>
+
+<footer>
+© 2024 WP Design
+</footer>
+
+</body>
+</html>
