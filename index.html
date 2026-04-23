@@ -37,12 +37,10 @@ nav{
     justify-content:center;
     align-items:center;
     z-index:1000;
-
     background:transparent;
     transition:all 0.3s ease;
 }
 
-/* SCROLL EFECTO */
 nav.scrolled{
     background:rgba(0,0,0,0.85);
     backdrop-filter:blur(8px);
@@ -50,7 +48,6 @@ nav.scrolled{
     box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
-/* LOGO */
 .logo{
     position:absolute;
     left:20px;
@@ -62,7 +59,6 @@ nav.scrolled .logo{
     height:38px;
 }
 
-/* MENU */
 .menu{
     display:flex;
     align-items:center;
@@ -75,7 +71,6 @@ nav.scrolled .logo{
     position:relative;
 }
 
-/* HOVER */
 .menu a::after{
     content:'';
     position:absolute;
@@ -91,7 +86,6 @@ nav.scrolled .logo{
     width:100%;
 }
 
-/* HAMBURGUESA */
 .hamburger{
     position:absolute;
     right:25px;
@@ -100,7 +94,6 @@ nav.scrolled .logo{
     cursor:pointer;
 }
 
-/* DROPDOWN */
 .dropdown{
     position:relative;
 }
@@ -118,7 +111,6 @@ nav.scrolled .logo{
     transform:rotate(180deg);
 }
 
-/* MEGA MENU PRO */
 .mega-menu{
     position:absolute;
     top:60px;
@@ -133,7 +125,6 @@ nav.scrolled .logo{
     border-radius:12px;
     border-top:3px solid #25D366;
     box-shadow:0 20px 50px rgba(0,0,0,0.7);
-
     opacity:0;
     transform:translateY(15px);
     pointer-events:none;
@@ -146,7 +137,6 @@ nav.scrolled .logo{
     pointer-events:auto;
 }
 
-/* COLUMNAS */
 .mega-column{
     display:flex;
     flex-direction:column;
@@ -185,6 +175,18 @@ nav.scrolled .logo{
     justify-content:center;
     align-items:center;
     text-align:center;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    top:0;
+    left:0;
+    z-index:-1;
 }
 
 #videoHero{
@@ -192,8 +194,17 @@ nav.scrolled .logo{
     width:100%;
     height:100%;
     object-fit:cover;
-    z-index:-1;
-    filter:brightness(50%);
+    z-index:-2;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    opacity:0.9;
 }
 
 /* ABOUT */
@@ -265,36 +276,44 @@ nav.scrolled .logo{
     border-radius:10px;
 }
 
-/* WHATS */
+/* WHATSAPP PRO */
 .whatsapp{
     position:fixed;
     right:20px;
     bottom:20px;
     background:#25D366;
-    padding:12px 15px;
+    padding:12px 18px;
     border-radius:50px;
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
     font-size:14px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    font-weight:bold;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
     transition:0.3s;
+    z-index:999;
+    animation:pulse 2s infinite;
+}
+
+.whatsapp i{
+    font-size:18px;
 }
 
 .whatsapp:hover{
-    transform:scale(1.05);
+    transform:scale(1.1);
 }
 
 .whatsapp2{
-    bottom:90px;
+    bottom:80px;
     background:#128C7E;
 }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#020617;
+@keyframes pulse{
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.08); }
+    100%{ transform:scale(1); }
 }
 
 /* RESPONSIVE */
@@ -325,6 +344,14 @@ footer{
     flex-direction:column;
 }
 
+.mega-menu{
+    display:none;
+}
+
+.dropdown.active .mega-menu{
+    display:flex;
+}
+
 .logo{
     height:35px;
 }
@@ -334,9 +361,8 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <nav>
-<img src="logo.png" class="logo" alt="WP Design Logo">
+<img src="logo.png" class="logo">
 
 <div class="hamburger" id="hamburger">☰</div>
 
@@ -346,48 +372,25 @@ footer{
 <a href="#nosotros">Nosotros</a>
 
 <div class="dropdown" id="dropdown">
-
 <div class="dropdown-toggle">
 Productos y servicios <i class="fa-solid fa-chevron-down"></i>
 </div>
 
 <div class="mega-menu">
-
 <div class="mega-column">
 <h4>Ingeniería</h4>
-<a href="diseño-mecanico.html"><i class="fa-solid fa-gears icon-spin"></i>Diseño Mecánico</a>
-<a href="mantenimiento.html"><i class="fa-solid fa-screwdriver-wrench icon-hover-spin"></i>Mantenimiento</a>
-<a href="programacion-de-robots.html"><i class="fa-solid fa-robot icon-glow"></i>Programación de robots</a>
-</div>
-
-<div class="mega-column">
-<h4>Transportadores</h4>
-<a href="cadena.html"><i class="fa-solid fa-link icon-hover-spin"></i>Cadena</a>
-<a href="rodillo.html"><i class="fa-solid fa-rotate icon-bounce"></i>Rodillo</a>
-<a href="banda.html"><i class="fa-solid fa-arrows-left-right icon-scale"></i>Banda</a>
-<a href="aereos.html"><i class="fa-solid fa-plane icon-hover-glow"></i>Aéreos</a>
-<a href="telescopicos.html"><i class="fa-solid fa-up-down icon-bounce"></i>Telescópicos</a>
-</div>
-
-<div class="mega-column">
-<h4>Fabricación</h4>
-<a href="maquinados.html"><i class="fa-solid fa-industry icon-glow"></i>Maquinados</a>
-<a href="scrap.html"><i class="fa-solid fa-recycle icon-spin"></i>Scrap conveyor</a>
-<a href="gabinetes.html"><i class="fa-solid fa-bolt icon-hover-glow"></i>Gabinetes eléctricos</a>
-</div>
-
+<a href="diseño-mecanico.html">Diseño Mecánico</a>
+<a href="mantenimiento.html">Mantenimiento</a>
+<a href="programacion-de-robots.html">Programación de robots</a>
 </div>
 </div>
-
-<a href="#proyectos">Proyectos</a>
-<a href="#clientes">Clientes</a>
+</div>
 
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<video autoplay muted loop id="videoHero" poster="fondo.jpg">
+<video autoplay muted loop playsinline id="videoHero">
 <source src="video.mp4" type="video/mp4">
 </video>
 
@@ -397,124 +400,23 @@ Productos y servicios <i class="fa-solid fa-chevron-down"></i>
 </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="nosotros">
-<h2>Nosotros</h2>
-
-<p>
-Somos desarrolladores e impulsores de la mejora continua en los procesos industriales.
-Nos especializamos en diseño, fabricación e integración de soluciones para manejo de materiales.
-</p>
-
-<div class="about-grid">
-
-<div class="about-card">
-<h3>🎯 Misión</h3>
-<p>Desarrollar soluciones de automatización industrial mediante diseño, fabricación e integración de sistemas.</p>
-</div>
-
-<div class="about-card">
-<h3>🚀 Visión</h3>
-<p>Ser líderes en ingeniería y automatización industrial a nivel nacional.</p>
-</div>
-
-<div class="about-card">
-<h3>💼 Valores</h3>
-<p>
-✔ Honestidad<br>
-✔ Calidad<br>
-✔ Innovación<br>
-✔ Compromiso<br>
-</p>
-</div>
-
-</div>
-</section>
-
-<!-- PROYECTOS -->
-<section class="projects" id="proyectos">
-<h2>Proyectos</h2>
-
-<div class="projects-grid">
-<div class="card">
-<img src="transportador-cadena.jpg" alt="Transportador de cadena">
-<p>Transportador de cadena</p>
-</div>
-
-<div class="card">
-<img src="transportador.jpeg" alt="Transportador industrial">
-<p>Transportador industrial</p>
-</div>
-
-<div class="card">
-<img src="herramental-soldadura.jpg" alt="Herramental de soldadura">
-<p>Herramental de soldadura</p>
-</div>
-</div>
-</section>
-
-<!-- CLIENTES -->
-<section class="clientes" id="clientes">
-<h2>Clientes</h2>
-
-<div class="logos">
-<img src="cliente1.jpg">
-<img src="cliente2.png">
-<img src="cliente3.png">
-<img src="cliente4.png">
-<img src="cliente5.jpg">
-<img src="cliente6.webp">
-<img src="cliente7.webp">
-</div>
-</section>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios." target="_blank">
-💬 Información
+<!-- BOTONES WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5214613766633?text=Hola%20quiero%20información" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Información
 </a>
 
-<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20automatización." target="_blank">
-💰 Cotizar
+<a class="whatsapp whatsapp2" href="https://wa.me/5214331111971?text=Hola%20quiero%20cotizar" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> Cotizar
 </a>
-
-<footer>
-<p>© 2026 WP Design</p>
-</footer>
 
 <script>
-// DROPDOWN
-const dropdown = document.getElementById("dropdown");
-
-dropdown.querySelector(".dropdown-toggle").addEventListener("click", function(){
-    dropdown.classList.toggle("active");
-});
-
-document.addEventListener("click", function(e){
-    if(!dropdown.contains(e.target)){
-        dropdown.classList.remove("active");
-    }
-});
-
-// MENU MOVIL
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 
 hamburger.addEventListener("click", ()=>{
     menu.classList.toggle("active");
 });
-
-// SCROLL NAVBAR PRO
-const nav = document.querySelector("nav");
-
-window.addEventListener("scroll", ()=>{
-    if(window.scrollY > 50){
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
-});
 </script>
 
 </body>
 </html>
-
